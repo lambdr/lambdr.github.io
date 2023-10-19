@@ -1,0 +1,10 @@
+---
+title: "Projects"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+# Project list
+
+Projects coming soon
