@@ -25,3 +25,4 @@ This is a [link](https://google.com)
 Here is a [link](https://p8105.com/index.html) to p8105.com. Here is a link [to the About page](about.html).
 
 # Here's a section
+Definitely a [plotly page](plotly.html)!
