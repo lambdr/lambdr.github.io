@@ -284,31 +284,25 @@ $(document).ready(function () {
 </div>
 
 
-<style type="text/css">
-.cols {display: flex; }
-</style>
-<div id="two-columns" class="section level1">
-<h1>Two columns</h1>
-<p>Below is a Div containing three child Divs side by side. The Div in
-the middle is empty, just to add more space between the left and right
-Divs.</p>
-<div class="cols">
-<div class="col">
-<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" width="480" /></p>
+<div style="display: flex;">
+<div class="column" style="width:70%;">
+<p>Here is the <strong>first</strong> Div.</p>
+<pre class="r"><code>str(iris)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    150 obs. of  5 variables:
+##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+##  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+##  $ Species     : Factor w/ 3 levels &quot;setosa&quot;,&quot;versicolor&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
 </div>
-<div class="col">
-<p>  <!-- an empty Div (with a white space), serving as
-a column separator --></p>
+<div class="column" style="width:5%;">
+<p><br />
+<!-- empty column for spacing reasons --></p>
 </div>
-<div class="col">
-<p>The figure on the left-hand side shows the <code>cars</code>
-data.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-</div>
+<div class="column" style="width:25%;">
+<p>And this block will be put on the right:</p>
+<pre class="r"><code>plot(iris[, -5])</code></pre>
+<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 </div>
 </div>
 
