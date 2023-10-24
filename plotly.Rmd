@@ -64,3 +64,4 @@ df_airbnb |>
           color = ~neighbourhood, colors = "viridis")
 ```
 
+
