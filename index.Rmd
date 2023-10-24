@@ -5,11 +5,13 @@ output:
 :::: {style="display: flex;"}
 
 ::: {.column width="70%"}
-Here is the **first** Div.
+# Derek R. Lamb
 
-```{r}
-str(iris)
-```
+### About me
+I am a first-year masters student in Columbia Mailman School of Public Health. I am studying Biostatistics with a concentration in Theory and Methods.
+
+### Research interests
+I have many.
 :::
 
 ::: {.column width="5%"}
