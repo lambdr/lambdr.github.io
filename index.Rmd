@@ -5,13 +5,18 @@ output:
 :::: {style="display: flex;"}
 
 ::: {.column width="70%"}
-# Derek R. Lamb
+# Derek Lamb
 
-### About me
-I am a first-year masters student in Columbia Mailman School of Public Health. I am studying Biostatistics with a concentration in Theory and Methods.
 
-### Research interests
-I have many.
+### About
+I received a B.S. in Chemistry and Molecular Biology from the University of Pittsburgh in 2021, and then moved to Baltimore, MD where I began two years of work at the Center for Blood Oxygen Transport and Hemostasis (CBOTH). Over this period, I grew as a researcher working on red blood cell biochemistry and artificial oxygen carriers. I realized that to fulfill my professional and research interests, I needed to gain mastery of data analysis and public health research. I am currently working on my M.S. in Biostatistics at the Columbia University Mailman School of Public Health.
+
+Outside of the lab, I enjoy theatre and the performing arts. I was previously involved academically and professionally in technical theatre, and still provide support and mentorship to a Maryland-based youth-run theatre company.
+
+
+### Research Interests
+I am interested in the study of drugs, biologics, and methods for improving outcomes in trauma settings. I am particularly interested in novel study design and analysis approaches to better evaluate the performance of therapeutics in the complex and dynamic hemorrhage environment. 
+
 :::
 
 ::: {.column width="5%"}
@@ -20,11 +25,22 @@ I have many.
 :::
 
 ::: {.column width="25%"}
-And this block will be put on the right:
 
-```{r}
-plot(iris[, -5])
+```{=html}
+<img src="images/profile_picture.png", style="border: 5px solid #333355;float:right;">
+
 ```
+
+
+```{=html}
+<div style="border-radius: 25px;background: #33335580;padding: 20px;">
+<h4 style=
+word-break:break-all;"> Contact Information</h4>
+<p style=
+word-break:break-all;">Email: <a href="Lamb.DerekR@gmail.com">Lamb.DerekR@gmail.com</a></p>
+</div>
+```
+
 :::
 
 ::::
