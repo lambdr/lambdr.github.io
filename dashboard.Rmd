@@ -16,7 +16,13 @@ library(p8105.datasets)
 
 
 ```{r tidy data}
-data("nyc_airbnb")
+data("ny_noaa")
+
+df_noaa = ny_noaa
+
+df_noaa |> 
+  pull(id) |> 
+  unique()
 
 df_airbnb = nyc_airbnb |> 
   mutate(stars = review_scores_location/2) |> 
