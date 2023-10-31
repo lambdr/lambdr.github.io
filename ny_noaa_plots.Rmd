@@ -7,8 +7,10 @@ output: html_document
 
 ```{r setup, include=FALSE}
 library(tidyverse)
+library(leaflet)
 library(plotly)
 library(p8105.datasets)
+
 
 knitr::opts_chunk$set(
   fig.width = 6,
@@ -83,6 +85,34 @@ df_noaa |>
   summarize(max_temp = max(tmax)) |> 
   plot_ly(x = ~year, y = ~max_temp, color = ~city,
           type = "scatter", mode = "lines", colors = "viridis")
+```
+
+```{r precip geography}
+# summarize data
+df_prcp = df_noaa |> 
+  drop_na(prcp, lat, lon) |> 
+  group_by(id) |> 
+  summarize(avg_prcp = mean(prcp),
+            lat = mean(lat),
+            long = mean(lon)
+            ) |> 
+  filter(avg_prcp < 100)
+
+# define color gradient by prcp
+pal <- colorNumeric(
+  palette = "viridis",
+  domain = df_prcp$avg_prcp)
+
+# generate plot
+df_prcp |> 
+  leaflet() |> 
+  addProviderTiles(providers$CartoDB.Positron) |> 
+  addCircleMarkers(~long, ~lat, label = ~id,
+                   color = ~pal(avg_prcp),
+                   radius = 2) |> 
+  addLegend(position = "topright",
+            pal = pal, values = df_prcp$avg_prcp,
+            title = "Precipitation [mm]")
 ```
 
 
