@@ -1,9 +1,15 @@
 ---
-title: "Untitled"
+title: "New York NOAA Dashboard"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
     vertical_layout: fill
+    theme: darkly
+    navbar:
+      - { title: "Site Homepage", href: "index.html", align: left }
+      - { icon: "fa-envelope fa-lg", href: "mailto:<drl2168@cumc.columbia.edu>", align: right }
+      - { icon: "fa-brands fa-linkedin", href: "https://www.linkedin.com/in/derek-lamb-b7bb86169/", align: right }
+      - { icon: "fa-github fa-lg", href: "http://github.com/lambdr/", align: right }
 ---
 
 ```{r setup, include=FALSE}
@@ -40,7 +46,8 @@ scale_fill_discrete = scale_fill_viridis_d
 data("ny_noaa")
 
 # Pull lat and long coords for NY weather station
-df_ghcnd = read_csv("https://www.atmos.albany.edu/facstaff/timm/ATM315spring14/R/data/NY/ghcnd-stations_NY.csv") |> 
+#df_ghcnd = read_csv("https://www.atmos.albany.edu/facstaff/timm/ATM315spring14/R/data/NY/ghcnd-stations_NY.csv") |> 
+df_ghcnd = read_csv("files/ghcnd-stations_NY.csv") |> 
   janitor::clean_names() |> 
   rename(city = info1) |> 
   mutate(city = str_to_title(city),
@@ -56,7 +63,7 @@ df_noaa = left_join(ny_noaa, df_ghcnd) |>
          month = as.numeric(month))
 ```
 
-Column {data-width=650}
+Column {data-width=600}
 -----------------------------------------------------------------------
 
 ### Average annual precipitation over NY state
@@ -89,7 +96,26 @@ df_prcp |>
             title = "Precipitation [mm]")
 ```
 
-### Chart B
+
+### Annual max temperature in four cities
+
+```{r}
+df_noaa |> 
+  filter(id %in% c("USW00094725", 
+                   "USW00014735",
+                   "USW00094728",
+                   "USW00014733")) |> 
+  drop_na(tmax) |> 
+  group_by(city, year) |> 
+  summarize(max_temp = max(tmax)) |> 
+  plot_ly(x = ~year, y = ~max_temp, color = ~city,
+          type = "scatter", mode = "lines", colors = "viridis")
+```
+
+
+Column {data-width=400}
+-----------------------------------------------------------------------
+### Comparing snowfall and total precipitation
 
 ```{r}
 df_noaa |> 
@@ -104,10 +130,7 @@ df_noaa |>
 ```
 
 
-Column {data-width=350}
------------------------------------------------------------------------
-
-### Chart C
+### Snowfall distribution in four cities
 
 ```{r}
 df_noaa |> 
@@ -120,18 +143,4 @@ df_noaa |>
           type = "box")
 ```
 
-### Chart D
-
-```{r}
-df_noaa |> 
-  filter(id %in% c("USW00094725", 
-                   "USW00014735",
-                   "USW00094728",
-                   "USW00014733")) |> 
-  drop_na(tmax) |> 
-  group_by(city, year) |> 
-  summarize(max_temp = max(tmax)) |> 
-  plot_ly(x = ~year, y = ~max_temp, color = ~city,
-          type = "scatter", mode = "lines", colors = "viridis")
-```
 
