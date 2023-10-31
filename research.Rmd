@@ -1,28 +1,31 @@
 ---
 title: ""
 output: 
-  html_document
+  html_document:
+    toc: true
+    toc_float: true
 ---
-### Research Experience
-My first research experience was with the Hernández Sánchez group at the University of Pittsburg. There, I worked on the synthesis of radially oriented [n]cyclo-*meta*-phenylenes, and gained proficiency research skills such as chromatography and NMR analyses. 
 
-Following graduation, I joined the Buehler Lab at the [Center for Blood Oxygen Transport and Hemostasis](https://www.medschool.umaryland.edu/cboth/) (CBOTH). During my time there I worked on an array of studies, from sickle cell and COVID-based coagulopathies to drug induced hemolysis. I developed laboratory methods, such as an assay for the generation of methemoglobin in response to oxidative insult and worked to refine existing methods on HPLC separation of modified hemoglobins. I also worked on the logistics of study design and implementation, including the initiation of a clinical study of cardiopulmonary bypass related hemolysis. Much of my work concerned the development of polymerized hemoglobin-based oxygen carriers and their evaluation *in vivo*. 
+### Research Experience
+
+My first research experience was with the Hernández Sánchez group at the University of Pittsburg. There, I worked on the synthesis of radially oriented [n]cyclo-*meta*-phenylenes, and gained proficiency research skills such as chromatography and NMR analyses.
+
+Following graduation, I joined the Buehler Lab at the [Center for Blood Oxygen Transport and Hemostasis](https://www.medschool.umaryland.edu/cboth/) (CBOTH). During my time there I worked on an array of studies, from sickle cell and COVID-based coagulopathies to drug induced hemolysis. I developed laboratory methods, such as an assay for the generation of methemoglobin in response to oxidative insult and worked to refine existing methods on HPLC separation of modified hemoglobins. I also worked on the logistics of study design and implementation, including the initiation of a clinical study of cardiopulmonary bypass related hemolysis. Much of my work concerned the development of polymerized hemoglobin-based oxygen carriers and their evaluation *in vivo*.
 
 During my time at CBOTH, I realized that while I had an interest in researching disease outcomes and hemorrhage therapeutics, it lay more with the public health impact of these issues, and that I had a growing interest in developing statistical methodology. For those reasons, I left CBOTH and decided to pursue an M.S. at Columbia Mailman. My full resume can be found [here](files/Lamb_Resume.pdf).
 
 ### Publications
-My work on the above topics has been published in the articles below and presented at conferences in the subsequent abstracts section.  
 
-* **Lamb DR**, Greenfield A, Thangaraju K, Setua S, Eiker G, Wang Q, Vahedi A, Khan MA, Yahya A, Cabrales P, Palmer AF, Buehler PW. *The Molecular Size of Bioengineered Oxygen Carriers Determines Tissue Oxygenation in a Hypercholesterolemia Guinea Pig Model of Hemorrhagic Shock and Resuscitation*. Mol Pharm. 2023 Oct 16. doi: 10.1021/acs.molpharmaceut.3c00611. 
-* Greenfield A, **Lamb DR**, Gu X, Thangaraju K, Setua S, Yahya A, Vahedi A, Khan MA, Wang Q, Buehler PW, Palmer AF. *Biophysical Analysis and Preclinical Pharmacokinetics-Pharmacodynamics of Tangential Flow Filtration Fractionated Polymerized Human Hemoglobin as a Red Blood Cell Substitute*. Biomacromolecules. 2023 Apr 10;24(4):1855-1870. doi: 10.1021/acs.biomac.3c00051. 
-* Palha MS, Legenzov EA, **Lamb DR**, Zimring JC, Buehler PW, Kao JPY. *Superoxide measurement as a novel probe of red blood cell storage quality*. Blood Transfus. 2023 Sep;21(5):422-427. doi: 10.2450/2022.0246-22.
-* Thangaraju K, Setua S, Lisk C, Swindle D, Stephenson D, Dzieciatkowska M, **Lamb DR**, Moitra P, Pak D, Hassell K, George G, Nuss R, Davizon-Castillo P, Stenmark KR, D'Alessandro A, Irwin DC, Buehler PW. *Extracellular Vesicle Size Reveals Cargo Specific to Coagulation and Inflammation in Pediatric and Adult Sickle Cell Disease*. Clin Appl Thromb Hemost. 2023 Jan-Dec;29:10760296231186144. doi: 10.1177/10760296231186144.
-* Setua S, Thangaraju K, Dzieciatkowska M, Wilkerson RB, Nemkov T, **Lamb DR**, Tagaya Y, Boyer T, Rowden T, Doctor A, D'Alessandro A, Buehler PW. *Coagulation potential and the integrated omics of extracellular vesicles from COVID-19 positive patient plasma*. Sci Rep. 2022 Dec 23;12(1):22191. doi: 10.1038/s41598-022-26473-8. 
+My work on the above topics has been published in the articles below and presented at conferences in the subsequent abstracts section.
 
+-   **Lamb DR**, Greenfield A, Thangaraju K, Setua S, Eiker G, Wang Q, Vahedi A, Khan MA, Yahya A, Cabrales P, Palmer AF, Buehler PW. *The Molecular Size of Bioengineered Oxygen Carriers Determines Tissue Oxygenation in a Hypercholesterolemia Guinea Pig Model of Hemorrhagic Shock and Resuscitation*. Mol Pharm. 2023 Oct 16. doi: 10.1021/acs.molpharmaceut.3c00611.
+-   Greenfield A, **Lamb DR**, Gu X, Thangaraju K, Setua S, Yahya A, Vahedi A, Khan MA, Wang Q, Buehler PW, Palmer AF. *Biophysical Analysis and Preclinical Pharmacokinetics-Pharmacodynamics of Tangential Flow Filtration Fractionated Polymerized Human Hemoglobin as a Red Blood Cell Substitute*. Biomacromolecules. 2023 Apr 10;24(4):1855-1870. doi: 10.1021/acs.biomac.3c00051.
+-   Palha MS, Legenzov EA, **Lamb DR**, Zimring JC, Buehler PW, Kao JPY. *Superoxide measurement as a novel probe of red blood cell storage quality*. Blood Transfus. 2023 Sep;21(5):422-427. doi: 10.2450/2022.0246-22.
+-   Thangaraju K, Setua S, Lisk C, Swindle D, Stephenson D, Dzieciatkowska M, **Lamb DR**, Moitra P, Pak D, Hassell K, George G, Nuss R, Davizon-Castillo P, Stenmark KR, D'Alessandro A, Irwin DC, Buehler PW. *Extracellular Vesicle Size Reveals Cargo Specific to Coagulation and Inflammation in Pediatric and Adult Sickle Cell Disease*. Clin Appl Thromb Hemost. 2023 Jan-Dec;29:10760296231186144. doi: 10.1177/10760296231186144.
+-   Setua S, Thangaraju K, Dzieciatkowska M, Wilkerson RB, Nemkov T, **Lamb DR**, Tagaya Y, Boyer T, Rowden T, Doctor A, D'Alessandro A, Buehler PW. *Coagulation potential and the integrated omics of extracellular vesicles from COVID-19 positive patient plasma*. Sci Rep. 2022 Dec 23;12(1):22191. doi: 10.1038/s41598-022-26473-8.
 
 ### Abstracts, Presentations, and Posters
 
-* **Lamb DR**, Thanagarju K, Setua S, Buehler PW. *Adulteration of opioid deterrent formulated tablets and hematological toxicity*. Poster presented at: CERSI Summit 2023.
-* Dziewulska KH, Kao JPY, Palha MS, Legenzov EA, Buehler PW, **Lamb DR**, Zimring JC. *Superoxide generation and redox cycling of primaquine metabolites can be driven by Biliverdin Reductase B and N-ribosyldihydronicotinamide: quinone reductase 2*. Abstract submitted to ASTMH annual meeting 2023.
-* Laurencin V, **Lamb DR**, Gordy D, Stone E, Spitalnik SL, Hod E, Kao JPY, Buehler PW, Thomas T. *Acute treadmill training of FVB mice leads to improved RBC deformability and decreased lipid peroxidation after cold storage*. Abstract submitted to AABB annual meeting 2023.
-
+-   **Lamb DR**, Thanagarju K, Setua S, Buehler PW. *Adulteration of opioid deterrent formulated tablets and hematological toxicity*. Poster presented at: CERSI Summit 2023.
+-   Dziewulska KH, Kao JPY, Palha MS, Legenzov EA, Buehler PW, **Lamb DR**, Zimring JC. *Superoxide generation and redox cycling of primaquine metabolites can be driven by Biliverdin Reductase B and N-ribosyldihydronicotinamide: quinone reductase 2*. Abstract submitted to ASTMH annual meeting 2023.
+-   Laurencin V, **Lamb DR**, Gordy D, Stone E, Spitalnik SL, Hod E, Kao JPY, Buehler PW, Thomas T. *Acute treadmill training of FVB mice leads to improved RBC deformability and decreased lipid peroxidation after cold storage*. Abstract submitted to AABB annual meeting 2023.

@@ -6,7 +6,11 @@ navbar:
     - text: "Research"
       href: research.html
     - text: "Projects"
-      href: projects.html
+      menu:
+      - text: "Projects Overview"
+        href: projects.html
+      - text: "Dashboard"
+        href: dashboard.html
     - text: "Dashboard"
       href: dashboard.html
   right:

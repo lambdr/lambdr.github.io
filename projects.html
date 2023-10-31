@@ -323,8 +323,20 @@ div.tocify {
         <li>
   <a href="research.html">Research</a>
 </li>
-<li>
-  <a href="projects.html">Projects</a>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Projects
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="projects.html">Projects Overview</a>
+    </li>
+    <li>
+      <a href="dashboard.html">Dashboard</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="dashboard.html">Dashboard</a>
@@ -363,19 +375,12 @@ div.tocify {
 </div>
 
 
-<div id="project-list" class="section level1">
-<h1>Project list</h1>
-<p>Projects coming soon</p>
-<p>You can also still use R!</p>
-<pre class="r"><code>plot_df &lt;- 
-  tibble(
-    x = runif(100),
-    y = 2 + rnorm(100)
-  )
-
-ggplot(plot_df, aes(x = x, y = y)) +
-  geom_point()</code></pre>
-<p><img src="projects_files/figure-html/unnamed-chunk-1-1.png" width="90%" /></p>
+<div id="interactive-dashboard" class="section level3">
+<h3>Interactive Dashboard</h3>
+<p>I made <a href="dashboard.html">this dashboard</a> as part of my data
+science course at Mailman. It pulls data from weather stations across
+the state of New York and displays various pieces of information using
+the <code>plotly</code> and <code>leaflet</code> libraries.</p>
 </div>
 
 

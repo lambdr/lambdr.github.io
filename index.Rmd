@@ -4,7 +4,7 @@ output:
 ---
 :::: {style="display: flex;"}
 
-::: {.column width="70%"}
+::: {.column width="65%"}
 # Derek Lamb
 
 
@@ -24,7 +24,7 @@ I am interested in the study of drugs, biologics, and methods for improving outc
 <!-- empty column for spacing reasons -->
 :::
 
-::: {.column width="25%"}
+::: {.column width="30%"}
 
 ```{=html}
 <img src="images/profile_picture.png", style="border: 5px solid #333355;float:right;">
@@ -33,11 +33,11 @@ I am interested in the study of drugs, biologics, and methods for improving outc
 
 
 ```{=html}
-<div style="border-radius: 25px;background: #33335580;padding: 20px;">
+<div style="border-radius: 25px;background: #33335590;padding: 10px;">
+<br/>
 <h4 style=
 word-break:break-all;"> Contact Information</h4>
-<p style=
-word-break:break-all;">Email: <a href="Lamb.DerekR@gmail.com">Lamb.DerekR@gmail.com</a></p>
+<p style="size:8px;word-break:break-all;">Email: <a href="Lamb.DerekR@gmail.com">Lamb.DerekR@gmail.com</a></p>
 </div>
 ```
 

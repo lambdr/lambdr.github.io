@@ -7,9 +7,6 @@ output:
     theme: darkly
     navbar:
       - { title: "Site Homepage", href: "index.html", align: left }
-      - { icon: "fa-envelope fa-lg", href: "mailto:<drl2168@cumc.columbia.edu>", align: right }
-      - { icon: "fa-brands fa-linkedin", href: "https://www.linkedin.com/in/derek-lamb-b7bb86169/", align: right }
-      - { icon: "fa-github fa-lg", href: "http://github.com/lambdr/", align: right }
 ---
 
 ```{r setup, include=FALSE}
