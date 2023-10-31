@@ -7,67 +7,131 @@ output:
 ---
 
 ```{r setup, include=FALSE}
+# load packages
 library(flexdashboard)
 library(tidyverse)
+library(leaflet)
 library(plotly)
 library(p8105.datasets)
+
+# default figure options
+knitr::opts_chunk$set(
+  fig.width = 6,
+  out.width = "90%"
+)
+
+theme_set(theme_bw() + theme(legend.position = "bottom"))
+
+options(
+  ggplot2.continuous.colour = "viridis",
+  ggplot2.continuous.fill = "viridis"
+)
+
+scale_colour_discrete = scale_colour_viridis_d
+scale_fill_discrete = scale_fill_viridis_d
+
+
 ```
 
 
 
 ```{r tidy data}
+# Pull NY eather station data
 data("ny_noaa")
 
-df_noaa = ny_noaa
+# Pull lat and long coords for NY weather station
+df_ghcnd = read_csv("https://www.atmos.albany.edu/facstaff/timm/ATM315spring14/R/data/NY/ghcnd-stations_NY.csv") |> 
+  janitor::clean_names() |> 
+  rename(city = info1) |> 
+  mutate(city = str_to_title(city),
+         city = case_when(city == "New" ~ "New York City",
+                          city != "New" ~ city))
 
-df_noaa |> 
-  pull(id) |> 
-  unique()
-
-df_airbnb = nyc_airbnb |> 
-  mutate(stars = review_scores_location/2) |> 
-  select(borough = neighbourhood_group,
-         neighbourhood, stars, price, room_type, lat, long
-         ) |> 
-    drop_na(stars) |> 
-    filter(
-      borough =="Manhattan",
-      room_type == "Entire home/apt",
-      price %in% 100:500
-    )
+# Restrict to ids in the NOAA data set
+df_noaa = left_join(ny_noaa, df_ghcnd) |> 
+  mutate(tmax = as.numeric(tmax)/10,
+         tmin = as.numeric(tmin)/10) |> 
+  separate(date, into = c("year", "month", "day"), "-") |> 
+  mutate(year = as.numeric(year),
+         month = as.numeric(month))
 ```
 
 Column {data-width=650}
 -----------------------------------------------------------------------
 
-### Chart A
+### Average annual precipitation over NY state
 
 ```{r}
-df_airbnb |> 
-  mutate(neighbourhood = fct_reorder(neighbourhood, price)) |> 
-  plot_ly(y = ~price, color = ~neighbourhood, type = "box", colors = "viridis")
-```
+# summarize data
+df_prcp = df_noaa |> 
+  drop_na(prcp, lat, lon) |> 
+  group_by(id) |> 
+  summarize(avg_prcp = mean(prcp),
+            lat = mean(lat),
+            long = mean(lon)
+            ) |> 
+  filter(avg_prcp < 100)
 
-Column {data-width=350}
------------------------------------------------------------------------
+# define color gradient by prcp
+pal <- colorNumeric(
+  palette = "viridis",
+  domain = df_prcp$avg_prcp)
+
+# generate plot
+df_prcp |> 
+  leaflet() |> 
+  addProviderTiles(providers$CartoDB.Positron) |> 
+  addCircleMarkers(~long, ~lat, label = ~id,
+                   color = ~pal(avg_prcp),
+                   radius = 2) |> 
+  addLegend(position = "topright",
+            pal = pal, values = df_prcp$avg_prcp,
+            title = "Precipitation [mm]")
+```
 
 ### Chart B
 
 ```{r}
-df_airbnb |> 
-  mutate(text_label = str_c("Price: $", price, "\nRating: ", stars)) |> 
-  plot_ly(
-    x = ~lat, y = ~long, color = ~price, text = ~text_label,
-    type = "scatter", mode = "markers", alpha = 0.5)
+df_noaa |> 
+  drop_na(prcp, snow, tmax) |> 
+  group_by(id, city) |> 
+  summarize(avg_rain = mean(prcp),
+            avg_snow = mean(snow),
+            avg_tmax = mean(tmax)) |> 
+  plot_ly(x = ~avg_rain, y = ~avg_snow, color = ~avg_tmax,
+          type = "scatter", mode = "markers",
+          text = ~city, colors = "viridis")
 ```
+
+
+Column {data-width=350}
+-----------------------------------------------------------------------
 
 ### Chart C
 
 ```{r}
-df_airbnb |> 
-  count(neighbourhood) |> 
-  mutate(neighbourhood = fct_reorder(neighbourhood, n)) |> 
-  plot_ly(x = ~neighbourhood, y = ~n, type = "bar", 
-          color = ~neighbourhood, colors = "viridis")
+df_noaa |> 
+  filter(id %in% c("USW00094725", 
+                   "USW00014735",
+                   "USW00094728",
+                   "USW00014733")) |> 
+  filter(snow > 0) |> 
+  plot_ly(x = ~city, y = ~snow, 
+          type = "box")
+```
+
+### Chart D
+
+```{r}
+df_noaa |> 
+  filter(id %in% c("USW00094725", 
+                   "USW00014735",
+                   "USW00094728",
+                   "USW00014733")) |> 
+  drop_na(tmax) |> 
+  group_by(city, year) |> 
+  summarize(max_temp = max(tmax)) |> 
+  plot_ly(x = ~year, y = ~max_temp, color = ~city,
+          type = "scatter", mode = "lines", colors = "viridis")
 ```
 
