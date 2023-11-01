@@ -112,18 +112,33 @@ df_noaa |>
 
 Column {data-width=400}
 -----------------------------------------------------------------------
-### Comparing snowfall and total precipitation
+### Comparing rainfall to distance from NYC
 
 ```{r}
-df_noaa |> 
-  drop_na(prcp, snow, tmax) |> 
+df_nyc_dist = df_noaa |> 
+  drop_na() |> 
   group_by(id, city) |> 
   summarize(avg_rain = mean(prcp),
             avg_snow = mean(snow),
-            avg_tmax = mean(tmax)) |> 
-  plot_ly(x = ~avg_rain, y = ~avg_snow, color = ~avg_tmax,
-          type = "scatter", mode = "markers",
-          text = ~city, colors = "viridis")
+            avg_tmax = mean(tmax),
+            long = mean(lon),
+            lat = mean(lat)) |> 
+  mutate(dist_nyc = pracma::haversine(c(lat,long),c(40.7128,-74.0060))) |> 
+  ungroup()
+# the haversine function gives the distance bwn two lat,long pairs
+
+fit <-  lm(avg_rain ~ dist_nyc, data = df_nyc_dist) |> fitted.values()
+
+df_nyc_dist |>   
+  plot_ly(x = ~dist_nyc, y = ~avg_rain) |> 
+  add_markers(y = ~avg_rain, text = ~city, 
+              hovertemplate = "%{text}<extra></extra>") |> 
+  add_lines(x = ~dist_nyc, y = fit, mode = "lines",
+            hovertemplate = "<extra></extra>") |> 
+  layout(showlegend = FALSE, 
+         xaxis = list(title = "Distance from NYC (km)"), 
+         yaxis = list(title = "Average Daily Rainfall (tenths mm)")
+         )
 ```
 
 
