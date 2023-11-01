@@ -7,11 +7,10 @@ output:
 ::: {.column width="65%"}
 # Derek Lamb
 
-
 ### About
-I received a B.S. in Chemistry and Molecular Biology from the University of Pittsburgh in 2021, and then moved to Baltimore, MD where I began two years of work at the Center for Blood Oxygen Transport and Hemostasis (CBOTH). Over this period, I grew as a researcher working on red blood cell biochemistry and artificial oxygen carriers. I realized that to fulfill my professional and research interests, I needed to gain mastery of data analysis and public health research. I am currently working on my M.S. in Biostatistics at the Columbia University Mailman School of Public Health.
+I received a B.S. in Chemistry and Molecular Biology from the University of Pittsburgh in 2021, and then moved to Baltimore, MD where I began two years of work at the [Center for Blood Oxygen Transport and Hemostasis](https://www.medschool.umaryland.edu/cboth/) (CBOTH). Over this period, I grew as a researcher working on red blood cell biochemistry and artificial oxygen carriers. I realized that to fulfill my professional and research interests, I needed to gain mastery of data analysis and public health research. I am currently working on my M.S. in Biostatistics at the Columbia University Mailman School of Public Health.
 
-Outside of the lab, I enjoy theatre and the performing arts. I was previously involved academically and professionally in technical theatre, and have worked on over 40 productions. Despite not being actively involved anymore, I still provide support and mentorship to a Maryland-based youth-run theatre company.
+Outside of the lab, I enjoy theatre and the performing arts. I was previously involved academically and professionally in technical theatre, and have worked on over 40 productions. Despite not being actively involved in theatre anymore, I still provide support and mentorship to a Maryland-based youth-run theatre company.
 
 
 ### Research Interests
