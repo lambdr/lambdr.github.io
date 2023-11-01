@@ -4,7 +4,6 @@ output:
   flexdashboard::flex_dashboard:
     orientation: columns
     vertical_layout: fill
-    theme: darkly
     navbar:
       - { title: "Site Homepage", href: "index.html", align: left }
 ---
@@ -36,21 +35,18 @@ scale_fill_discrete = scale_fill_viridis_d
 
 ```
 
-
-
 ```{r tidy data}
 # Pull NY eather station data
 data("ny_noaa")
 
 # Pull lat and long coords for NY weather station
-#df_ghcnd = read_csv("https://www.atmos.albany.edu/facstaff/timm/ATM315spring14/R/data/NY/ghcnd-stations_NY.csv") |> 
-df_ghcnd = read_csv("files/ghcnd-stations_NY.csv") |> 
+#df_ghcnd = read_csv("files/ghcnd-stations_NY.csv") |>  # if website link goes down
+df_ghcnd = read_csv("https://www.atmos.albany.edu/facstaff/timm/ATM315spring14/R/data/NY/ghcnd-stations_NY.csv") |> 
   janitor::clean_names() |> 
   rename(city = info1) |> 
   mutate(city = str_to_title(city),
          city = case_when(city == "New" ~ "New York City",
                           city != "New" ~ city))
-
 # Restrict to ids in the NOAA data set
 df_noaa = left_join(ny_noaa, df_ghcnd) |> 
   mutate(tmax = as.numeric(tmax)/10,
@@ -60,12 +56,12 @@ df_noaa = left_join(ny_noaa, df_ghcnd) |>
          month = as.numeric(month))
 ```
 
-Column {data-width=600}
+Column {data-width=500}
 -----------------------------------------------------------------------
 
 ### Average annual precipitation over NY state
 
-```{r}
+```{r chart a}
 # summarize data
 df_prcp = df_noaa |> 
   drop_na(prcp, lat, lon) |> 
@@ -94,27 +90,9 @@ df_prcp |>
 ```
 
 
-### Annual max temperature in four cities
-
-```{r}
-df_noaa |> 
-  filter(id %in% c("USW00094725", 
-                   "USW00014735",
-                   "USW00094728",
-                   "USW00014733")) |> 
-  drop_na(tmax) |> 
-  group_by(city, year) |> 
-  summarize(max_temp = max(tmax)) |> 
-  plot_ly(x = ~year, y = ~max_temp, color = ~city,
-          type = "scatter", mode = "lines", colors = "viridis")
-```
-
-
-Column {data-width=400}
------------------------------------------------------------------------
 ### Comparing rainfall to distance from NYC
 
-```{r}
+```{r chart b}
 df_nyc_dist = df_noaa |> 
   drop_na() |> 
   group_by(id, city) |> 
@@ -139,20 +117,52 @@ df_nyc_dist |>
          xaxis = list(title = "Distance from NYC (km)"), 
          yaxis = list(title = "Average Daily Rainfall (tenths mm)")
          )
+
+
+
 ```
 
 
-### Snowfall distribution in four cities
+Column {.tabset data-width=500}
+-----------------------------------------------------------------------
+### Annual Temperature
 
-```{r}
+```{r chart c}
 df_noaa |> 
   filter(id %in% c("USW00094725", 
                    "USW00014735",
                    "USW00094728",
                    "USW00014733")) |> 
-  filter(snow > 0) |> 
-  plot_ly(x = ~city, y = ~snow, 
-          type = "box")
+  drop_na(tmax) |> 
+  group_by(city, year) |> 
+  summarize(max_temp = mean(tmax)) |> 
+  plot_ly(x = ~year, y = ~max_temp, color = ~city,
+          type = "scatter", mode = "lines", colors = "viridis") |> 
+  layout(legend = list(orientation = "h", y = 1.05),
+         xaxis = list(title = "Year"),
+         yaxis = list(title = "Average temperature (°C)"))
 ```
 
+### Daily Temperature
 
+```{r chart d}
+df_noaa |> 
+  drop_na(tmax) |> 
+  filter(id %in% c("USW00094725", 
+                   "USW00014735",
+                   "USW00094728",
+                   "USW00014733")) |> 
+  mutate(season = case_when(
+    month %in% c(3, 4, 5) ~ "Spring", 
+    month %in% c(6, 7, 8) ~ "Summer", 
+    month %in% c(9, 10, 11) ~ "Fall", 
+    month %in% c(12, 1, 2) ~ "Winter"),
+    season = fct_relevel(season, c("Spring", "Summer", "Fall", "Winter"))) |> 
+  #filter(season == "Summer" | season == "Winter") |> 
+  plot_ly(x = ~city, y = ~tmax, color = ~season,
+          type = "box", colors = "viridis") |> 
+  layout(legend = list(title = list(text = "<b>  Season</b>")),
+         boxmode = "group",
+         xaxis = list(title = ""),
+         yaxis = list(title = "Daily Temperature (°C)"))
+```

@@ -15,7 +15,9 @@ navbar:
       href: dashboard.html
   right:
     - icon: fa-envelope fa-lg
-      href: mailto:<drl2168@cumc.columbia.edu>
+      href: mailto:<Lamb.DerekR@gmail.com>
+    - text: "CV"
+      href: files/Lamb_Resume.pdf
     - icon: fa-brands fa-linkedin
       href: https://www.linkedin.com/in/derek-lamb-b7bb86169/
     - icon: fa-github fa-lg

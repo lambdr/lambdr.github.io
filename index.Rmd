@@ -11,11 +11,13 @@ output:
 ### About
 I received a B.S. in Chemistry and Molecular Biology from the University of Pittsburgh in 2021, and then moved to Baltimore, MD where I began two years of work at the Center for Blood Oxygen Transport and Hemostasis (CBOTH). Over this period, I grew as a researcher working on red blood cell biochemistry and artificial oxygen carriers. I realized that to fulfill my professional and research interests, I needed to gain mastery of data analysis and public health research. I am currently working on my M.S. in Biostatistics at the Columbia University Mailman School of Public Health.
 
-Outside of the lab, I enjoy theatre and the performing arts. I was previously involved academically and professionally in technical theatre, and still provide support and mentorship to a Maryland-based youth-run theatre company.
+Outside of the lab, I enjoy theatre and the performing arts. I was previously involved academically and professionally in technical theatre, and have worked on over 40 productions. I still provide support and mentorship to a Maryland-based youth-run theatre company.
 
 
 ### Research Interests
 I am interested in the study of drugs, biologics, and methods for improving outcomes in trauma settings. I am particularly interested in novel study design and analysis approaches to better evaluate the performance of therapeutics in the complex and dynamic hemorrhage environment. 
+
+<!-- Communication and education section to add later -->
 
 :::
 
@@ -37,7 +39,10 @@ I am interested in the study of drugs, biologics, and methods for improving outc
 <br/>
 <h4 style=
 word-break:break-all;"> Contact Information</h4>
-<p style="size:8px;word-break:break-all;">Email: <a href="Lamb.DerekR@gmail.com">Lamb.DerekR@gmail.com</a></p>
+<p style="size:8px;word-break:break-all;">
+Derek Lamb
+<br/>
+Email: <a href="mailto:Lamb.DerekR@gmail.com">Lamb.DerekR@gmail.com</a></p>
 </div>
 ```
 
