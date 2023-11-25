@@ -1,6 +1,5 @@
 ---
-output:
-  html_document
+title: Derek Lamb
 ---
 :::: {style="display: flex;"}
 
