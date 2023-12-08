@@ -11,8 +11,6 @@ navbar:
         href: projects.html
       - text: "Dashboard"
         href: dashboard.html
-    - text: "Dashboard"
-      href: dashboard.html
   right:
     - icon: fa-envelope fa-lg
       href: mailto:<Lamb.DerekR@gmail.com>
@@ -24,4 +22,6 @@ navbar:
       href: http://github.com/lambdr/
 output:
   html_document:
+    include: 
+      in_header: header.html
     theme: flatly
