@@ -2,19 +2,10 @@
 title: "Projects"
 output: 
   html_document:
+    css: "lambdr.css"
     toc: true
     toc_float: true
 ---
-```{css echo = FALSE}
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 70%;
-}
-```
-
-
 These are a collection of projects I have worked on during the course of my master's program.
 
 ### UFO Visualization
@@ -22,6 +13,14 @@ I worked with other M.S. Biostatistics students to create [a website](https://ni
 
 <img src="images/ufo_heatmap.jpg" class="center">
 <p align="center"><b>Figure 1.</b> A heatmap showing the number of UFO sightings between 1970-2022, normalized by population.</p>
+
+### Breast Cancer Survival
+
+For my final project in Biostatistical Methods 1, I collaborated with two other students to predict risk of death in patients with breast cancer. We built and optimized a logistic regression model and evaluated its performance on different racial groups. Our report is available [here](files/p8130_written_report.pdf).
+
+<img src="images/sep_plot_race.png" class="center">
+<p align="center"><b>Figure 2.</b> Separation plots by race. Values are stripes, arranged by increasing predicted probability of death in (A) White, (B) Black, and (C) Other race patients. The stripes are colored yellow if the patient survived, and red if they died. The black line indicates the predicted probability of death.</p>
+
 
 ### Interactive NOAA Dashboard
 
