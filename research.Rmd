@@ -18,13 +18,15 @@ During my time at CBOTH, I realized that while I had an interest in researching 
 
 My work on the above topics has been published in the articles below and presented at conferences in the subsequent abstracts section.
 
+- Cuddington C, Greenfield A, Lee YG, Kim JL, **Lamb D**, Buehler PW, Black SM, Palmer AF, Whitson BA. *Polymerized Human Hemoglobin-Based Oxygen Carrier Preserves Lung Allograft Function During Normothermic Ex Vivo Lung Perfusion*. ASAIO J. 2024 Jan 25. doi: 10.1097/MAT.0000000000002118. 
+
 -   **Lamb DR**, Greenfield A, Thangaraju K, Setua S, Eiker G, Wang Q, Vahedi A, Khan MA, Yahya A, Cabrales P, Palmer AF, Buehler PW. *The Molecular Size of Bioengineered Oxygen Carriers Determines Tissue Oxygenation in a Hypercholesterolemia Guinea Pig Model of Hemorrhagic Shock and Resuscitation*. Mol Pharm. 2023 Oct 16. doi: 10.1021/acs.molpharmaceut.3c00611.
 -   Palha MS, Legenzov EA, **Lamb DR**, Zimring JC, Buehler PW, Kao JPY. *Superoxide measurement as a novel probe of red blood cell storage quality*. Blood Transfus. 2023 Sep;21(5):422-427. doi: 10.2450/2022.0246-22.
 -   Greenfield A, **Lamb DR**, Gu X, Thangaraju K, Setua S, Yahya A, Vahedi A, Khan MA, Wang Q, Buehler PW, Palmer AF. *Biophysical Analysis and Preclinical Pharmacokinetics-Pharmacodynamics of Tangential Flow Filtration Fractionated Polymerized Human Hemoglobin as a Red Blood Cell Substitute*. Biomacromolecules. 2023 Apr 10;24(4):1855-1870. doi: 10.1021/acs.biomac.3c00051.
 -   Thangaraju K, Setua S, Lisk C, Swindle D, Stephenson D, Dzieciatkowska M, **Lamb DR**, Moitra P, Pak D, Hassell K, George G, Nuss R, Davizon-Castillo P, Stenmark KR, D'Alessandro A, Irwin DC, Buehler PW. *Extracellular Vesicle Size Reveals Cargo Specific to Coagulation and Inflammation in Pediatric and Adult Sickle Cell Disease*. Clin Appl Thromb Hemost. 2023 Jan-Dec;29:10760296231186144. doi: 10.1177/10760296231186144.
 -   Setua S, Thangaraju K, Dzieciatkowska M, Wilkerson RB, Nemkov T, **Lamb DR**, Tagaya Y, Boyer T, Rowden T, Doctor A, D'Alessandro A, Buehler PW. *Coagulation potential and the integrated omics of extracellular vesicles from COVID-19 positive patient plasma*. Sci Rep. 2022 Dec 23;12(1):22191. doi: 10.1038/s41598-022-26473-8.
 
-### Abstracts, Presentations, and Posters
+### Abstracts & Posters
 
 -   **Lamb DR**, Thanagarju K, Setua S, Buehler PW. *Adulteration of opioid deterrent formulated tablets and hematological toxicity*. Poster presented at: CERSI Summit 2023.
 -   Dziewulska KH, Kao JPY, Palha MS, Legenzov EA, Buehler PW, **Lamb DR**, Zimring JC. *Superoxide generation and redox cycling of primaquine metabolites can be driven by Biliverdin Reductase B and N-ribosyldihydronicotinamide: quinone reductase 2*. Abstract submitted to ASTMH annual meeting 2023.
