@@ -13,7 +13,7 @@
 
 <title>Projects</title>
 
-<script src="site_libs/header-attrs-2.24/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.26/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -35,8 +35,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
 <html>
 <head>
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
@@ -387,8 +387,48 @@ div.tocify {
 </div>
 
 
+<script>
+window.onload = function() {
+  var figures = document.querySelectorAll('figure');
+  for (var i = 0; i < figures.length; i++) {
+    var figcaption = figures[i].querySelector('figcaption');
+    figcaption.innerHTML = '<b>Figure ' + (i + 1) + '.</b> ' + figcaption.innerHTML;
+  }
+};
+</script>
 <p>These are a collection of projects I have worked on during the course
 of my master’s program.</p>
+<div id="transcriptomics-of-thyroid-cancer" class="section level3">
+<h3>Transcriptomics of Thyroid Cancer</h3>
+<p>To demonstrate proficiency in statistical genetics and omics
+analyses, I performed a transcriptome-wide association study (TWAS)
+coupled with a gene set enrichment analysis (GSEA) on papillary thyroid
+cancer. I utilized data from <a
+href="https://www.cancer.gov/ccg/research/genome-sequencing/tcga">TCGA</a>
+and identified differentially expressed genes and enriched gene sets.
+The following figures were created in the course of the project.</p>
+<figure>
+<img src="images/volcano_plot.png" class="center">
+<figcaption align="center">
+Volcano plot showing TWAS results. Each dot is a gene product. The grey
+horizontal line is at a q-value of 0.05, and grey vertical lines are at
+±1. Red genes are upregulated compared to normal tissue, while blue
+genes are downregulated. The 30 genes with highest differential
+expression are labelled.
+</figcaption>
+</figure>
+<figure>
+<img src="images/gsea_fig.png" class="center">
+<figcaption align="center">
+GSEA plots for the four most enriched gene sets in the TCGA thyroid
+cancer project. The location of gene set members with log2 fold change
+(top panel) and the running enrichment score (bottom panel) is shown for
+<b>A)</b> GO:0035074 (collagen catabolism), <b>B)</b> GO:0031424
+(keratinization), <b>C)</b> GO:0035082 (thyroid hormone metabolism),
+&amp; <b>D)</b> GO:0042403 (axoneme assembly).
+</figcaption>
+</figure>
+</div>
 <div id="ufo-visualization" class="section level3">
 <h3>UFO Visualization</h3>
 <p>I worked with other M.S. Biostatistics students to create <a
@@ -399,11 +439,13 @@ adapted by <a href="https://data.world/timothyrenner">Timothy Renner</a>
 for this project. If you are interested, our <a
 href="https://nishalingam.github.io/p8105_final-project/report.html">report</a>
 summarizes these findings.</p>
+<figure>
 <img src="images/ufo_heatmap.jpg" class="center">
-<p align="center">
-<b>Figure 1.</b> A heatmap showing the number of UFO sightings between
-1970-2022, normalized by population.
-</p>
+<figcaption align="center">
+A heatmap showing the number of UFO sightings between 1970-2022,
+normalized by population.
+</figcaption>
+</figure>
 </div>
 <div id="breast-cancer-survival" class="section level3">
 <h3>Breast Cancer Survival</h3>
@@ -412,14 +454,16 @@ two other students to predict risk of death in patients with breast
 cancer. We built and optimized a logistic regression model and evaluated
 its performance on different racial groups. Our report is available <a
 href="files/p8130_written_report.pdf">here</a>.</p>
+<figure>
 <img src="images/sep_plot_race.png" class="center">
-<p align="center">
-<b>Figure 2.</b> Separation plots by race. Values are stripes, arranged
-by increasing predicted probability of death in (A) White, (B) Black,
-and (C) Other race patients. The stripes are colored yellow if the
-patient survived, and red if they died. The black line indicates the
-predicted probability of death.
-</p>
+<figcaption align="center">
+Separation plots by race. Values are stripes, arranged by increasing
+predicted probability of death in (A) White, (B) Black, and (C) Other
+race patients. The stripes are colored yellow if the patient survived,
+and red if they died. The black line indicates the predicted probability
+of death.
+</figcaption>
+</figure>
 </div>
 <div id="interactive-noaa-dashboard" class="section level3">
 <h3>Interactive NOAA Dashboard</h3>
