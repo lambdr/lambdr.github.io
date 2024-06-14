@@ -26,7 +26,7 @@ I am interested in the study of drugs, biologics, and methods for improving outc
 ::: {.column width="30%"}
 
 ```{=html}
-<img src="images/profile_picture.png", style="border: 5px solid #333355;float:right;">
+<img src="images/headshot_2024.jpg", style="border: 5px solid #333355;float:right;">
 
 ```
 
