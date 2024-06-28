@@ -2,24 +2,9 @@
 title: "Projects"
 output: 
   html_document:
-    css: "lambdr.css"
     toc: true
     toc_float: true
 ---
-
-
-<script>
-window.onload = function() {
-  var figures = document.querySelectorAll('figure');
-  for (var i = 0; i < figures.length; i++) {
-    var figcaption = figures[i].querySelector('figcaption');
-    figcaption.innerHTML = '<b>Figure ' + (i + 1) + '.</b> ' + figcaption.innerHTML;
-  }
-};
-</script>
-
-
-
 These are a collection of projects I have worked on during the course of my master's program.
 
 ### Transcriptomics of Thyroid Cancer

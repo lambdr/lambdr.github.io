@@ -14,6 +14,8 @@ Following graduation, I joined the Buehler Lab at the [Center for Blood Oxygen T
 
 During my time at CBOTH, I realized that while I had an interest in researching disease outcomes and hemorrhage therapeutics, it lay more with the public health impact of these issues, and that I had a growing interest in developing statistical methodology. For those reasons, I left CBOTH and decided to pursue an M.S. at Columbia Mailman. My full resume can be found [here](files/Lamb_Resume.pdf).
 
+I am currently working in the Center for Statistical Genetics in the Gertrude H. Sergievsky Center at Columbia. My current research focuses on methods for integrating genomic and proteomic data. 
+
 ### Publications
 
 My work on the above topics has been published in the articles below and presented at conferences in the subsequent abstracts section.
@@ -27,7 +29,7 @@ My work on the above topics has been published in the articles below and present
 -   Setua S, Thangaraju K, Dzieciatkowska M, Wilkerson RB, Nemkov T, **Lamb DR**, Tagaya Y, Boyer T, Rowden T, Doctor A, D'Alessandro A, Buehler PW. *Coagulation potential and the integrated omics of extracellular vesicles from COVID-19 positive patient plasma*. Sci Rep. 2022 Dec 23;12(1):22191. doi: 10.1038/s41598-022-26473-8.
 
 ### Abstracts & Posters
-
+-   Hay AH, Buehler P, Kao J, **Lamb DR**, Commons R, Legenzov EA, Palha MS, Zimring JC. *Combination of a reductase inhibitor with primaquine prevents hemolysis of G6PD deficient RBCs*. Abstract submitted to ASTMH annual meeting 2024.
 -   **Lamb DR**, Thanagarju K, Setua S, Buehler PW. *Adulteration of opioid deterrent formulated tablets and hematological toxicity*. Poster presented at: CERSI Summit 2023.
 -   Dziewulska KH, Kao JPY, Palha MS, Legenzov EA, Buehler PW, **Lamb DR**, Zimring JC. *Superoxide generation and redox cycling of primaquine metabolites can be driven by Biliverdin Reductase B and N-ribosyldihydronicotinamide: quinone reductase 2*. Abstract submitted to ASTMH annual meeting 2023.
 -   Laurencin V, **Lamb DR**, Gordy D, Stone E, Spitalnik SL, Hod E, Kao JPY, Buehler PW, Thomas T. *Acute treadmill training of FVB mice leads to improved RBC deformability and decreased lipid peroxidation after cold storage*. Abstract submitted to AABB annual meeting 2023.

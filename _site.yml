@@ -5,6 +5,8 @@ navbar:
   left: 
     - text: "Research"
       href: research.html
+    - text: "Science Communication"
+      href: communication.html
     - text: "Projects"
       menu:
       - text: "Projects Overview"

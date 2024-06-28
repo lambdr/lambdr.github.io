@@ -11,7 +11,7 @@
 
 
 
-<title>Projects</title>
+<title>Science Communication</title>
 
 <script src="site_libs/header-attrs-2.27/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -76,6 +76,7 @@ if (window.hljs) {
 
 
 
+<link rel="stylesheet" href="lambdr.css" type="text/css" />
 
 
 
@@ -386,86 +387,52 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Projects</h1>
+<h1 class="title toc-ignore">Science Communication</h1>
 
 </div>
 
 
-<p>These are a collection of projects I have worked on during the course
-of my master’s program.</p>
-<div id="transcriptomics-of-thyroid-cancer" class="section level3">
-<h3>Transcriptomics of Thyroid Cancer</h3>
-<p>To demonstrate proficiency in statistical genetics and omics
-analyses, I performed a transcriptome-wide association study (TWAS)
-coupled with a gene set enrichment analysis (GSEA) on papillary thyroid
-cancer. I utilized data from <a
-href="https://www.cancer.gov/ccg/research/genome-sequencing/tcga">TCGA</a>
-and identified differentially expressed genes and enriched gene sets.
-The following figures were created in the course of the project.</p>
+<p>Any scientific insight the goes unshared is meaningless. The
+collective research process requires dissemination and interrogation of
+ideas, but this is easier said than done. A key part of effective
+science communication is understanding your audience, and your
+relationship to your audience. <a href="research.html">Academic
+publications</a> are an effective means of communicating new discoveries
+and methods within the scientific community, but can’t always convey
+those insights to students, policy-makers, and the public.</p>
+<p>Here, I want to highlight my involvement in two different domains of
+science communication: first, my work in public health journalism to
+promote public health literacy and address misinformation, and second,
+my work in science education.</p>
+<div id="media-publications" class="section level3">
+<h3>Media Publications</h3>
+<p>I work with the <a href="https://amsterdamnews.com/">New York
+Amsterdam News</a> as a public health correspondent. I have published a
+number of articles debunking health misinformation and aim to promote a
+public understanding of prevailing issues in public health. To read
+stories that I and my public health peers have written, <a
+href="https://amsterdamnews.com/news/tag/blacklight-fact-check/">visit
+the AmNews’s website</a>.</p>
 <figure>
-<img src="images/volcano_plot.png" class="center">
+<a href="https://amsterdamnews.com/news/2024/04/11/facetcheck-false-current-at-home-covid-tests-cannot-detect-latest-variants-of-covid/">
+<img src="images/amnews_example.png" class="center" style="border: 1px solid #2C3E5077; border-radius: 10px;">
+</a>
 <figcaption align="center">
-Volcano plot showing TWAS results. Each dot is a gene product. The grey
-horizontal line is at a q-value of 0.05, and grey vertical lines are at
-±1. Red genes are upregulated compared to normal tissue, while blue
-genes are downregulated. The 30 genes with highest differential
-expression are labelled.
-</figcaption>
-</figure>
-<figure>
-<img src="images/gsea_fig.png" class="center">
-<figcaption align="center">
-GSEA plots for the four most enriched gene sets in the TCGA thyroid
-cancer project. The location of gene set members with log2 fold change
-(top panel) and the running enrichment score (bottom panel) is shown for
-<b>A)</b> GO:0035074 (collagen catabolism), <b>B)</b> GO:0031424
-(keratinization), <b>C)</b> GO:0035082 (thyroid hormone metabolism),
-&amp; <b>D)</b> GO:0042403 (axoneme assembly).
+A factcheck article I published with the NY AmNews.
 </figcaption>
 </figure>
 </div>
-<div id="ufo-visualization" class="section level3">
-<h3>UFO Visualization</h3>
-<p>I worked with other M.S. Biostatistics students to create <a
-href="https://nishalingam.github.io/p8105_final-project/index.html">a
-website</a> that explores and analyzes reports of UFO sightings. We used
-data collected by the <a href="https://nuforc.org/">NUFORC</a> and
-adapted by <a href="https://data.world/timothyrenner">Timothy Renner</a>
-for this project. If you are interested, our <a
-href="https://nishalingam.github.io/p8105_final-project/report.html">report</a>
-summarizes these findings.</p>
-<figure>
-<img src="images/ufo_heatmap.jpg" class="center">
-<figcaption align="center">
-A heatmap showing the number of UFO sightings between 1970-2022,
-normalized by population.
-</figcaption>
-</figure>
-</div>
-<div id="breast-cancer-survival" class="section level3">
-<h3>Breast Cancer Survival</h3>
-<p>For my final project in Biostatistical Methods 1, I collaborated with
-two other students to predict risk of death in patients with breast
-cancer. We built and optimized a logistic regression model and evaluated
-its performance on different racial groups. Our report is available <a
-href="files/p8130_written_report.pdf">here</a>.</p>
-<figure>
-<img src="images/sep_plot_race.png" class="center">
-<figcaption align="center">
-Separation plots by race. Values are stripes, arranged by increasing
-predicted probability of death in (A) White, (B) Black, and (C) Other
-race patients. The stripes are colored yellow if the patient survived,
-and red if they died. The black line indicates the predicted probability
-of death.
-</figcaption>
-</figure>
-</div>
-<div id="interactive-noaa-dashboard" class="section level3">
-<h3>Interactive NOAA Dashboard</h3>
-<p>I made <a href="dashboard.html">this dashboard</a> as part of my data
-science course at Mailman. It pulls data from weather stations across
-the state of New York and displays various pieces of information using
-the <code>plotly</code> and <code>leaflet</code> libraries.</p>
+<div id="education" class="section level3">
+<h3>Education</h3>
+<p>I have a strong interest in education, and work to engage and teach
+students about a range of STEM topics. Over the past decade, I have
+mentored, tutored, and TA’d students in a number of subjects, primarily
+mathematics and chemistry. These students have ranged from middle school
+to masters level, and . Currently at Columbia, I TA courses in
+statistical theory and data science.</p>
+<p>I have also done extracurricular engagement I gave a talk <a
+href="http://cu-biostats-computing-club.org/resources.html#HTML_and_CSS">on
+web design and data science</a> for student groups at Columbia.</p>
 </div>
 
 <br><br>
