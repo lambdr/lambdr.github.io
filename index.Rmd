@@ -5,17 +5,24 @@ title: "Derek Lamb"
 
 ::: {.column width="65%"}
 
+I am a biomedical researcher at Columbia University working in the field of statistical genetics. I received a B.S. in Chemistry and Molecular Biology from the University of Pittsburgh in 2021 and am currently working on my M.S. in Biostatistics at the Columbia University Mailman School of Public Health. 
+
 ### About
-I received a B.S. in Chemistry and Molecular Biology from the University of Pittsburgh in 2021, and then moved to Baltimore, MD where I began two years of work at the [Center for Blood Oxygen Transport and Hemostasis](https://www.medschool.umaryland.edu/cboth/) (CBOTH). Over this period, I grew as a researcher working on red blood cell biochemistry and artificial oxygen carriers. I realized that to fulfill my professional and research interests, I needed to gain mastery of data analysis and public health research. I am currently working on my M.S. in Biostatistics at the Columbia University Mailman School of Public Health.
+I received a B.S. in Chemistry and Molecular Biology from the University of Pittsburgh in 2021, and then moved to Baltimore, MD where I began two years of work at the [Center for Blood Oxygen Transport and Hemostasis](https://www.medschool.umaryland.edu/cboth/) (CBOTH). During this time, I worked on a number of projects related to red blood cell biochemistry, including understanding COVID-19 pathogenesis and developing artificial oxygen carriers. W
+
+
+Over this period, I grew as a researcher working on red blood cell biochemistry and artificial oxygen carriers. I realized that to fulfill my professional and research interests, I needed to gain mastery of data analysis and public health research. I am currently working on my M.S. in Biostatistics at the Columbia University Mailman School of Public Health.
 
 Outside of the lab, I enjoy theatre and the performing arts. I was previously involved academically and professionally in technical theatre, and have worked on over 40 productions. Despite not being actively involved in theatre anymore, I still provide support and mentorship to a Maryland-based youth-run theatre company.
 
 
 ### Research Interests
-I am interested in the study of drugs, biologics, and methods for improving outcomes in trauma settings. I am particularly interested in novel study design and analysis approaches to better evaluate the performance of therapeutics in the complex and dynamic hemorrhage environment. 
+I am interested in the study of drugs, biologics, and methods for improving outcomes in trauma settings. I am particularly interested in adaptive study designs to better evaluate the performance of therapeutics in the complex and dynamic hemorrhage environment. 
 
-<!-- Communication and education section to add later -->
+With a background in molecular biology, I am also interested in the unique opportunities offered by large scale biological data to understand health outcomes. My current research focuses on methods for imputing proteomic and transcriptomic data to better power biobank-scale analyses.
 
+### Science Communication
+Public health research should serve the public, yet recent public health crises have shown just how challenging effective communication can be. As part of my studies in biomedical and public health research, I am focusing on not only on communication to other researchers, but also communication [to students and the public](communication.html). I work to promote science communication and health literacy through my work with the Columbia Mailman Public Health Journalism club and the [New York Amsterdam News](https://amsterdamnews.com/news/tag/blacklight-fact-check/).
 :::
 
 ::: {.column width="5%"}
