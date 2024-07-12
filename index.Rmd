@@ -8,8 +8,7 @@ title: "Derek Lamb"
 I am a biomedical researcher at Columbia University working in the field of statistical genetics. I received a B.S. in Chemistry and Molecular Biology from the University of Pittsburgh in 2021 and am currently working on my M.S. in Biostatistics at the Columbia University Mailman School of Public Health. 
 
 ### About
-I received a B.S. in Chemistry and Molecular Biology from the University of Pittsburgh in 2021, and then moved to Baltimore, MD where I began two years of work at the [Center for Blood Oxygen Transport and Hemostasis](https://www.medschool.umaryland.edu/cboth/) (CBOTH). During this time, I worked on a number of projects related to red blood cell biochemistry, including understanding COVID-19 pathogenesis and developing artificial oxygen carriers. W
-
+I received a B.S. in Chemistry and Molecular Biology from the University of Pittsburgh in 2021, and then moved to Baltimore, MD where I began two years of work at the [Center for Blood Oxygen Transport and Hemostasis](https://www.medschool.umaryland.edu/cboth/) (CBOTH). During this time, I worked on a number of projects related to red blood cell biochemistry, including understanding COVID-19 pathogenesis and developing artificial oxygen carriers. 
 
 Over this period, I grew as a researcher working on red blood cell biochemistry and artificial oxygen carriers. I realized that to fulfill my professional and research interests, I needed to gain mastery of data analysis and public health research. I am currently working on my M.S. in Biostatistics at the Columbia University Mailman School of Public Health.
 
