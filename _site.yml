@@ -16,6 +16,8 @@ navbar:
       href: files/Lamb_Resume.pdf
     - icon: fa-brands fa-linkedin
       href: https://www.linkedin.com/in/derek-lamb-b7bb86169/
+    - icon: ai-google-scholar ai-lg
+      href: https://scholar.google.com/citations?user=FM7BsoAAAAAJ&hl=en&oi=ao 
     - icon: fa-github fa-lg
       href: http://github.com/lambdr/
 output:

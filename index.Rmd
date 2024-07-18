@@ -1,6 +1,8 @@
 ---
 title: "Derek Lamb"
 ---
+
+
 :::: {style="display: flex;"}
 
 ::: {.column width="65%"}
