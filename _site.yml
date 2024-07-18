@@ -7,12 +7,8 @@ navbar:
       href: research.html
     - text: "Science Communication"
       href: communication.html
-    - text: "Projects"
-      menu:
-      - text: "Projects Overview"
-        href: projects.html
-      - text: "Dashboard"
-        href: dashboard.html
+    - text: "Selected Work"
+      href: projects.html
   right:
     - icon: fa-envelope fa-lg
       href: mailto:<Lamb.DerekR@gmail.com>

@@ -1,11 +1,11 @@
 ---
-title: "Projects"
+title: "Selected Work"
 output: 
   html_document:
     toc: true
     toc_float: true
 ---
-These are a collection of projects I have worked on during the course of my master's program.
+This is a collection of projects I have worked on during the course of my master's program.
 
 ### Transcriptomics of Thyroid Cancer
 
