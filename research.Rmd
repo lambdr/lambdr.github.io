@@ -20,6 +20,8 @@ I am currently working in the Center for Statistical Genetics in the Gertrude H.
 
 My work on the above topics has been published in the articles below and presented at conferences in the subsequent abstracts section.
 
+- Dziewulska-Cronk KH, Reisz JA, Hay AM, Nemkov T, Cendali FI, Issaian A, **Lamb DR**, Palha MS, Legenzov EA, Kao JPY, Walker LA, Tekwani BL, Buehler PW, D'Alessandro A, Zimring JC. *Primaquine-5,6-orthoquinone is directly hemolytic to older G6PD deficient RBCs in a humanized mouse model*. J Pharmacol Exp Ther. 2024 Aug 2:JPET-AR-2024-002218. doi: 10.1124/jpet.124.002218. 
+
 - Cuddington C, Greenfield A, Lee YG, Kim JL, **Lamb D**, Buehler PW, Black SM, Palmer AF, Whitson BA. *Polymerized Human Hemoglobin-Based Oxygen Carrier Preserves Lung Allograft Function During Normothermic Ex Vivo Lung Perfusion*. ASAIO J. 2024 Jan 25. doi: 10.1097/MAT.0000000000002118. 
 
 -   **Lamb DR**, Greenfield A, Thangaraju K, Setua S, Eiker G, Wang Q, Vahedi A, Khan MA, Yahya A, Cabrales P, Palmer AF, Buehler PW. *The Molecular Size of Bioengineered Oxygen Carriers Determines Tissue Oxygenation in a Hypercholesterolemia Guinea Pig Model of Hemorrhagic Shock and Resuscitation*. Mol Pharm. 2023 Oct 16. doi: 10.1021/acs.molpharmaceut.3c00611.
