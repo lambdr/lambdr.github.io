@@ -31,7 +31,7 @@ Public health research should serve the public, yet recent public health crises 
 
 ::: {.column width="30%"}
 ```{=html}
-<img src="images/headshot_2024.jpg", style="border: 5px solid #333355;float:right; margin-bottom: 10px;">
+<img src="images/headshot_2025.png", style="border: 5px solid #333355;float:right; margin-bottom: 10px;">
 
 <div style="border-radius: 25px;background: #33335590;padding: 10px;">
 <br/>
