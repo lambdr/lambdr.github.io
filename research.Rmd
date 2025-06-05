@@ -14,7 +14,8 @@ Following graduation, I joined the Buehler Lab at the [Center for Blood Oxygen T
 
 During my time at CBOTH, I realized that while I had an interest in researching disease outcomes and hemorrhage therapeutics, it lay more with the public health impact of these issues, and that I had a growing interest in developing statistical methodology. For those reasons, I left CBOTH and decided to pursue an M.S. at Columbia Mailman. My full resume can be found [here](files/Lamb_Resume.pdf).
 
-I am currently working in the Center for Statistical Genetics in the Gertrude H. Sergievsky Center at Columbia. My current research focuses on methods for integrating genomic and proteomic data. 
+During my Master's, I worked as a research assistant in the Center for Statistical Genetics in the Gertrude H. Sergievsky Center at Columbia. My work focused on methods for integrating genomic and proteomic data at biobank-scale, with applications to ischemic stroke and blood lipid data in the UK Biobank.
+
 
 ### Publications
 

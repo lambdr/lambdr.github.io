@@ -13,7 +13,7 @@ navbar:
     - icon: fa-envelope fa-lg
       href: mailto:<Lamb.DerekR@gmail.com>
     - text: "CV"
-      href: files/Lamb_Resume.pdf
+      href: files/Lamb_Derek_CV.pdf
     - icon: fa-brands fa-linkedin
       href: https://www.linkedin.com/in/derek-lamb-b7bb86169/
     - icon: ai-google-scholar ai-lg
@@ -25,4 +25,4 @@ output:
     include: 
       in_header: header.html
       after_body: footer.html
-    theme: flatly
+    theme: sandstone

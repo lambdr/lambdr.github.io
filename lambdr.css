@@ -1,3 +1,20 @@
+/* Link colours */
+a {
+  color: #d9230f;
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  color: #91170a;
+  text-decoration: underline;
+}
+
+
+.nav>li>a {
+  font-size: 14px !important;
+}
+
+/* Columns and formatting */
 .center {
   width: 70%;
   display: block;

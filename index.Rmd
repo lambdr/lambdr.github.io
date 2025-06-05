@@ -7,10 +7,10 @@ title: "Derek Lamb"
 
 ::: {.column width="65%"}
 
-I am a biomedical researcher at Columbia University working in the field of statistical genetics. I received a B.S. in Chemistry and Molecular Biology from the University of Pittsburgh in 2021 and am currently working on my M.S. in Biostatistics at the Columbia University Mailman School of Public Health. 
+I am a Biostatistics PhD student at the University of Pennsylvania. I received a BS in Chemistry and Molecular Biology from the University of Pittsburgh in 2021 and a MS in Biostatistics at the Columbia University Mailman School of Public Health in 2025. 
 
 ### About
-After I received my B.S. in 2021, I moved to Baltimore, MD and began two years of work at the [Center for Blood Oxygen Transport and Hemostasis](https://www.medschool.umaryland.edu/cboth/) (CBOTH). During this time, I worked on a number of projects related to red blood cell biochemistry, including understanding COVID-19 pathogenesis and developing artificial oxygen carriers. To further my knowledge of data analysis and the statistical aspects of biomedical research, I am working on an M.S. in Biostatistics at [Columbia University Mailman School of Public Health](https://www.publichealth.columbia.edu/academics/departments/biostatistics).
+After I received my B.S. in 2021, I moved to Baltimore, MD and began two years of work at the [Center for Blood Oxygen Transport and Hemostasis](https://www.medschool.umaryland.edu/cboth/) (CBOTH). During this time, I worked on a number of projects related to red blood cell biochemistry, including understanding COVID-19 pathogenesis and developing artificial oxygen carriers. As my interests shifted towards public health and the statistical aspects of biomedical research, I became interested in biostatistics and received Master's in Biostatistics at [Columbia University Mailman School of Public Health](https://www.publichealth.columbia.edu/academics/departments/biostatistics), with my research focused on proteomics data in the UK Biobank. Now, I am continuing my education in UPenn's PhD program.
 
 Outside of the lab, I enjoy theatre and the performing arts. I was previously involved academically and professionally in technical theatre, and have worked on over 40 productions. Despite not being actively involved in theatre anymore, I still provide support and mentorship to a Maryland-based youth-run theatre company.
 
@@ -21,7 +21,7 @@ I am interested in the study of drugs, biologics, and methods for improving outc
 With a background in molecular biology, I am also interested in the unique opportunities offered by large scale biological data to understand health outcomes. My current research focuses on methods for imputing proteomic and transcriptomic data to better power biobank-scale analyses.
 
 ### Science Communication
-Public health research should serve the public, yet recent public health crises have shown just how challenging effective communication can be. As part of my studies in biomedical and public health research, I am focusing on not only on communication to other researchers, but also communication [to students and the public](communication.html). I work to promote science communication and health literacy through my work with the Columbia Mailman Public Health Journalism club and the [New York Amsterdam News](https://amsterdamnews.com/news/tag/blacklight-fact-check/).
+Public health research should serve the public, yet recent public health crises have shown just how challenging effective communication can be. As part of my studies in biomedical and public health research, I am focusing on not only on communication to other researchers, but also communication [to students and the public](communication.html). I've worked to promote science communication and health literacy through my work with the Columbia Mailman Public Health Journalism club and the [New York Amsterdam News](https://amsterdamnews.com/news/tag/blacklight-fact-check/).
 :::
 
 ::: {.column width="5%"}
@@ -31,9 +31,9 @@ Public health research should serve the public, yet recent public health crises 
 
 ::: {.column width="30%"}
 ```{=html}
-<img src="images/headshot_2025.png", style="border: 5px solid #333355;float:right; margin-bottom: 10px;">
+<img src="images/headshot_2025.png", style="border: 5px solid #3e3f3a;float:right; margin-bottom: 10px;">
 
-<div style="border-radius: 25px;background: #33335590;padding: 10px;">
+<div style="border-radius: 25px;background: #98978b;padding: 10px;">
 <br/>
 <h4 style=
 word-break:break-all;"> Contact Information</h4>

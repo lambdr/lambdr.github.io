@@ -23,4 +23,4 @@ I work with the [New York Amsterdam News](https://amsterdamnews.com/) as a publi
 ### Education
 I have a strong interest in education, and work to engage and teach students about a range of STEM topics. Over the past decade, I have mentored, tutored, and TA'd students in a number of subjects, primarily mathematics and chemistry. These students have ranged from middle school to masters level, and . Currently at Columbia, I TA courses in statistical theory and data science.
 
-I have also done extracurricular engagement I gave a talk [on web design and data science](http://cu-biostats-computing-club.org/resources.html#HTML_and_CSS) for student groups at Columbia.
+I have also done extracurricular engagemen, giving talks [on web design and data science](http://cu-biostats-computing-club.org/resources.html#HTML_and_CSS) for student groups at Columbia.
