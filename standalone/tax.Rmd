@@ -1,0 +1,174 @@
+---
+title: "Taxes"
+output: 
+  html_document:
+    theme: sandstone
+    css: ../lambdr.css
+    toc: true
+    toc_float: true
+---
+
+**I am not a tax professional. I have never taking a home economics course. Philosophers debate whether I know what I'm doing at all. The following page is assembled for my own benefit, based upon information that *I believe* to be correct. Please use the contents within as a resource if you wish, but proceed with caution, particularly if your life circumstances differ significantly from my own.**
+
+I'm a new PhD student at the University of Pennsylvania Perelman School of Medicine. You might be too. How the hell do I do taxes? In the past, it's been pretty simple: collect my W2s and 1099s and file my return in February, getting scammed by TurboTax like all good Americans. But the fellowship that UPenn is paying me is not subject to withholding and will not come with a 1099 form. So what should I do? This page documents some of my thought process and resources I've gathered based upon talking with more senior students, in an attempt to answer that question.
+
+## What Even Are Taxes?
+
+Generally, you pay Federal and State Taxes on your income, sometimes City/Municipal taxes as well. Federal taxes tend to come in two flavours: income tax and FICA (Federal Insurance Contributions Act: social security & Medicare). So I have about four different payments to juggle right? Well, fortunately it's gonna be simpler than that (at least for the UPenn part).
+
+As a Fellowship, UPenn's stipend is **exempt from FICA and PA State Taxes**. Also, while we are not providing a service to the university (through a Teaching Assistantship or Research Assistantship), we are exempt from Philadelphia City Tax^†^. So we **only need to focus on Federal income taxes**.
+
+<font size="1">^†^ I'm only 90% sure this is true. There is a memo (see tax ppt from 2022) that emphasises "BGS PhD students are NOT employees of the University of Pennsylvania". As such, we don't seem to need to pay Philly taxes. Once we hold a TA/RA position and thus hold a "Service Position", our stipend will be subject to Wage Tax withholding, but this should be on 50% of the total stipend (see 2019 PHL memo). At present this would be about an extra 1.9% of our paycheck.</font>
+
+## Federal Income Tax
+
+The more money you make, the more you need to pay in taxes. But how much? Well, essentially you cut up your income into different pieces, and pay a different percentage of each in taxes. Most people pay 0% tax on the first piece, applying the so-called "standard deduction". This is because the amount (\$15,000 for 2025) is deducted from your taxable income. Then, you apply the following *marginal rates*, to the remainder of your taxable income. See [the IRS website](https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2025) or the table below.
+
+| **Tax rate** | **on taxable income from . . .** | **up to . . .** |
+|:-------------|:---------------------------------|:----------------|
+| 10%          | \$0                              | \$11,925        |
+| 12%          | \$11,926                         | \$48,475        |
+| 22%          | \$48,476                         | \$103,350       |
+| 24%          | \$103,351                        | \$197,300       |
+| 32%          | \$197,301                        | \$250,525       |
+| 35%          | \$250,526                        | \$626,350       |
+| 37%          | \$626,351                        | And up          |
+
+### Estimated taxes
+
+Everyone is required to pay taxes as you earn income, not in one big chunk at the end of the year. The tax return you file by April 15th is about squaring the amount that you did pay with the amount you were supposed to. Because we are not employed and UPenn is not withholding taxes from our stipends, we are required to make up the difference. We are required to *estimate* our own tax burden and pay that; however, there's some leniency. You mainly need to get within \$1,000 of the correct amount, though a more thorough and detailed explanation can be found  [on the IRS website](https://www.irs.gov/faqs/estimated-tax).
+
+
+### When do taxes need to be paid?
+
+There are multiple ways to make payments, but the most common one is filing quarterly. If filing quarterly, these need to be paid on the following dates (and no, not all quarters are quarters).
+
+| Payment Period  |             Due Date              |
+|:---------------:|:---------------------------------:|
+| Jan. 1–March 31 |             April 15              |
+| April 1–May 31  |              June 15              |
+| June 1–Aug. 31  |             Sept. 15              |
+| Sept. 1–Dec. 31 | Jan. 15^†^ of the following year. |
+
+^†^ If you file your Tax Return by January 30th, the rules are different. See January payment in Chapter 2 of [Publication 505, Tax Withholding and Estimated Tax](https://www.irs.gov/forms-pubs/about-publication-505 "About Publication 505, Tax Withholding and Estimated Tax")
+
+#### What if taxes aren't paid quarterly?
+
+Then you get fined. The IRS helpfully **does not provide an exact amount/percentage for the fine**. From what I can tell, it tends to be \<10% of the total tax you owe. In our case that would be \~\$100, but don't rely on that number to decide that you won't pay quarterly.
+
+## Examples
+
+### Example 1. BGS Stipend Only
+
+If you had no prior income before entering BGS in June, and have no other complicating factors (exemptions, deductions, etc.), then we can figure out exactly what your tax burden will be for 2025. Your annual income will be composed of three parts: the \$2,000 moving award, three months of pay at the old stipend (annual amount: \$41,500), and four months of pay from the new stipend (\$42,745). This leads to a total income of \$26,623.
+
+$$
+2,000 + \left( \frac{3}{12}\times 41,500 \right) + \left( \frac{4}{12} \times 42,745 \right) = 26,623
+$$
+
+Because we're assuming the simplest case, we'll apply the standard deduction to your income, [which in 2025](https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2025) will be \$15,000. This is income that you don't need to pay any income tax on. You thus will have a taxable income of \$11,623.
+
+$$
+26,623 - 15,000 = 11,623
+$$
+
+The first "tax bracket" will go all the way up to \$11,925 in 2025, so the last calculation is easy. The marginal rate for this first bracket is simply 10%, so you will need to pay a 10% of your total taxable income in taxes. You should have already had this tax withheld from your \$2,000 moving award, so we can subtract that amount from the additional tax you will owe. While you will owe a total of \$1,162, you've already paid \$200 from the withholding, so the additional amount that you need to pay is \$962.
+
+$$
+0.1 \times (11,623  - 2,000) = 962
+$$
+
+Because you will be making income from June-December, you need to make two payments, one by September 15 and one by January 15. The amount you'll make in each period will be different (both due to the different stipends amounts and the fact the latter period has an extra month), but the easiest approach is to pay half (\$481) in the first payment and half (again \$481) in the second.
+
+#### Technicality
+
+From what I've read, if your *tax liability* (the amount you owe to the IRS on April 15) is under \$1,000, you don't get fined. Note that because I'm including the withholding of \$200, from your taxes, this would mean that you wouldn't actually get fined for underpayment. Additionally, there are some exceptions to the penalty, depending on your circumstances and tax liability in previous years, see the [instructions for Form 2210 (the Penalty for Underpayment Form)](https://www.irs.gov/pub/irs-pdf/i2210.pdf). I am still going to make quarterly payments, in part because that will be required next year (when we receive a full year's worth of stipend), and I am expecting a slightly higher tax due to prior income. **Make whatever decision you feel best suites your circumstances, verifying the information on this page. A reminder that I am not a tax professional.**
+
+### Example 2. Slightly More Complex
+
+I am also going to highlight a slightly more complex case, as it's the one that I'm in. I had a part-time job earlier this year, earning me \$ 4,845, but taxes were withheld. I'm also expecting some additional income from dividends, which won't have tax withheld. I'll estimate that at \$500.
+
+I'm going to walk through the previous calculation, but include these additional numbers to get a somewhat more complex result. First, we see that my total income will be \$31,968 and my taxable income, applying the same standard deduction of \$15,000 will be \$16,968.
+
+$$
+4,845 + 500 + 2,000 + \left( \frac{3}{12}\times 41,500 \right) + \left( \frac{4}{12} \times 42,745 \right)= 31,968 \\
+31,968 - 15,000 = 16,968
+$$
+
+Now, because this taxable income exceeds \$11,925, part of it will be taxed at 12%. The amount of total federal income tax that I will owe is \$1,798.
+
+$$
+\left( 0.10 \times 11,925 \right) + \left( 0.12 \times [16,968 - 11,925] \right) = 1,798
+$$
+
+But remember that I've had tax withheld on from my part-time job and the moving award. I'm just going to assume that the minimum 10% was withheld, which is \$685. So, the amount of additional tax I need to pay is \$1,113.
+
+$$
+0.10 \times (4,845 + 2,000) = 685 \\
+1,798 - 685 = 1,113
+$$
+
+As a result, I should make two payments of \$557 to the IRS, on September 15 and January 15.
+
+### Next Steps
+
+I have not done this yet, but what I plan to do is make a payment directly using [the IRS website](https://www.irs.gov/payments/pay-personal-taxes-from-your-bank-account) by **September 15th**. This payment will cover estimated taxes on June 1st - August 31st income (three months of stipend). However, for convenience, I am going to pay half of [the above amount which is XXXXX]
+
+## Further Reading
+
+Here are some additional resources, so that you can get more information about tax requirements.
+
+-   US Individual Income Tax Return [Form 1040](https://www.irs.gov/pub/irs-pdf/f1040.pdf)
+
+-   The [Instructions for Form 1040](https://www.irs.gov/pub/irs-pdf/i1040gi.pdf)
+
+-   Additional Income & Adjustments to Income [Form 1040 Schedule 1](https://www.irs.gov/pub/irs-pdf/f1040s1.pdf). Our stipend information would go on **Line 8r**. We would then report **Line 10** on **Form 1040 Line 8**.
+
+Some other forms that may be relevant to me, but might not be for you include:
+
+-   [Form 8863](https://www.irs.gov/pub/irs-pdf/f8863.pdf) and [Schedule 3 Form 1040](https://www.irs.gov/pub/irs-pdf/f1040s3.pdf), both relating to personal educational contributions
+
+-   [Schedule B Form 1040](https://www.irs.gov/pub/irs-pdf/f1040sb.pdf) for interest and dividends
+
+```{=html}
+<!-- ## Additional Nonsense (maybe remove)
+### Income sources.
+
+I expect the following:
+
+-   A W2 from Columbia University from TA position
+
+-   A W2 from UPenn for the moving award
+
+-   A 1099-DIV from Investments (must fill out Schedule B Part III if this is over \$1,500. Fill out Schedule B anyway?)
+
+-   UPenn Fellowship - does not have a 1099 form but gets reported on Schedule 1 1040 Line 8r
+
+-   Note: MSRP withdrawal may also need things.
+
+
+
+### Form 1040 Breakdown
+
+Ultimately, I will need to file a 1040 form.
+
+#### Line 1a.
+
+This is where all **W2** income is included.
+
+#### Line 3a-b.
+
+This is where dividends will go, both qualified and ordinary. A *Qualified Dividend* has to do with the length the asset was held. Refer to 1099-DIV.
+
+#### Line 8r.
+
+This is where the fellowship total will go.
+
+
+#### Line 16. Tax
+will be determined from Tax tables (because income will def. be under $100,000).
+
+
+
+-->
+```

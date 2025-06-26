@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Taxes</title>
+
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Home</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="research.html">Research</a>
+</li>
+<li>
+  <a href="communication.html">Science Communication</a>
+</li>
+<li>
+  <a href="projects.html">Selected Work</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="mailto:&lt;Lamb.DerekR@gmail.com&gt;">
+    <span class="fa fa-envelope fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="files/Lamb_Derek_CV.pdf">CV</a>
+</li>
+<li>
+  <a href="https://www.linkedin.com/in/derek-lamb-b7bb86169/">
+    <span class="fa fa-brands fa-linkedin"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://scholar.google.com/citations?user=FM7BsoAAAAAJ&amp;hl=en&amp;oi=ao">
+    <span class="ai ai-google-scholar ai-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="http://github.com/lambdr/">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Taxes</h1>
+
+</div>
+
+
+<p>I’m a new PhD student at the University of Pennsylvania. You might be
+too. How the hell do I do taxes? This page documents some of my thought
+process and resources I’ve</p>
+<div id="relevant-forms" class="section level3">
+<h3>Relevant Forms</h3>
+<p>US Individual Income Tax Return <a
+href="https://www.irs.gov/pub/irs-pdf/f1040.pdf"
+class="uri">https://www.irs.gov/pub/irs-pdf/f1040.pdf</a></p>
+<p><a href="https://www.irs.gov/pub/irs-pdf/i1040gi.pdf">Form 1040
+Instructions</a></p>
+<p>Additional Income &amp; Adjustments to Income <a
+href="https://www.irs.gov/pub/irs-pdf/f1040s1.pdf">Form 1040 Schedule
+1</a></p>
+<p>Note Form 8863 and Schedule 3 Form 1040 for potential education
+contributions.</p>
+</div>
+<div id="educational-fellowship" class="section level3">
+<h3>Educational Fellowship</h3>
+<p>asdf</p>
+</div>
+<div id="when-do-taxes-need-to-be-paid" class="section level3">
+<h3>When do taxes need to be paid?</h3>
+<p>If filing quarterly, these need to be paid on the following dates
+(and no, not all quarters are quarters).</p>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Payment Period</th>
+<th align="center">Due Date</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Jan. 1–March 31</td>
+<td align="center">April 15</td>
+</tr>
+<tr class="even">
+<td align="center">April 1–May 31</td>
+<td align="center">June 15</td>
+</tr>
+<tr class="odd">
+<td align="center">June 1–Aug. 31</td>
+<td align="center">Sept. 15</td>
+</tr>
+<tr class="even">
+<td align="center">Sept. 1–Dec. 31</td>
+<td align="center">Jan. 15* of the following year. *See January payment
+in Chapter 2 of <a
+href="https://www.irs.gov/forms-pubs/about-publication-505"
+title="About Publication 505, Tax Withholding and Estimated Tax">Publication
+505, Tax Withholding and Estimated Tax</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="income-sources." class="section level3">
+<h3>Income sources.</h3>
+<p>I expect the following:</p>
+<ul>
+<li><p>A W2 from Columbia University from TA position</p></li>
+<li><p>A W2 from UPenn for the moving award</p></li>
+<li><p>A 1099-DIV from Investments (must fill out Schedule B Part III if
+this is over $1,500. Fill out Schedule B anyway?)</p></li>
+<li><p>UPenn Fellowship - does not have a 1099 form but gets reported on
+Schedule 1 1040 Line 8r</p></li>
+<li><p>Note: MSRP withdrawal may also need things.</p></li>
+</ul>
+</div>
+<div id="estimated-taxes" class="section level3">
+<h3>Estimated taxes</h3>
+<p>This page lists the <a
+href="https://www.irs.gov/faqs/estimated-tax">rules on estimated
+taxes</a>. Relevant sections:</p>
+<pre><code>-   You expect to owe at least \$1,000 in tax for the current tax year after subtracting your withholding and refundable credits, and
+-   You expect your withholding and refundable credits to be less than the smaller of:
+    -   90% of the tax to be shown on your current year&#39;s tax return, or
+    -   100% of the tax shown on your prior year’s tax return. (Your prior year’s tax return must cover all 12 months.)</code></pre>
+<p>Marginal rates and whatnot are <a
+href="https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2025">here</a>.</p>
+</div>
+<div id="form-1040-breakdown" class="section level3">
+<h3>Form 1040 Breakdown</h3>
+<p>Ultimately, I will need to file a 1040 form.</p>
+<div id="line-1a." class="section level4">
+<h4>Line 1a.</h4>
+<p>This is where all <strong>W2</strong> income is included.</p>
+</div>
+<div id="line-3a-b." class="section level4">
+<h4>Line 3a-b.</h4>
+<p>This is where dividends will go, both qualified and ordinary. A
+<em>Qualified Dividend</em> has to do with the length the asset was
+held. Refer to 1099-DIV.</p>
+</div>
+<div id="line-8r." class="section level4">
+<h4>Line 8r.</h4>
+<p>This is where the fellowship total will go.</p>
+</div>
+<div id="line-16.-tax" class="section level4">
+<h4>Line 16. Tax</h4>
+<p>will be determined from Tax tables (because income will def. be under
+$100,000).</p>
+</div>
+</div>
+<div id="planning" class="section level2">
+<h2>Planning</h2>
+<p>UPenn Income</p>
+<pre class="r"><code>2000 + (3/12) * 41500 + (4/12) * 42745 - 15000</code></pre>
+<pre><code>## [1] 11623.33</code></pre>
+<pre class="r"><code># 26,623 - 15,000 (std. ded) = 11623.33
+
+0.10*11623</code></pre>
+<pre><code>## [1] 1162.3</code></pre>
+<pre class="r"><code># Owed tax of 1,162</code></pre>
+</div>
+<div id="pennsylvania-and-philadelphia-taxes" class="section level2">
+<h2>Pennsylvania and Philadelphia Taxes</h2>
+<p>I definitely don’t need to pay PA taxes. Philly is unclear. There is
+a memo (see tax ppt from 2022) that “BGS PhD students are NOT employees
+of the University of Pennsylvania”. As such, we don’t seem to need to
+pay Philly taxes. Once we hold a TA position and thus hold a “Service
+Position”, our stipend will be subject to Wage Tax withholding, but this
+should be on 50% of the total stipend (see 2019 PHL memo).</p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
