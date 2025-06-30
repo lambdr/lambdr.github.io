@@ -112,7 +112,7 @@ As a result, I should make two payments of \$557 to the IRS, on September 15 and
 
 ### Next Steps
 
-I have not done this yet, but what I plan to do is make a payment directly using [the IRS website](https://www.irs.gov/payments/pay-personal-taxes-from-your-bank-account) by **September 15th**. This payment will cover estimated taxes on June 1st - August 31st income (three months of stipend). However, for convenience, I am going to pay half of [the above amount which is XXXXX]
+I have not done this yet, but what I plan to do is make a payment of \$557 directly using [the IRS website](https://www.irs.gov/payments/pay-personal-taxes-from-your-bank-account) by **September 15th**. This payment will cover estimated taxes on June 1st - August 31st income (three months of stipend). 
 
 ## Further Reading
 
