@@ -114,6 +114,15 @@ As a result, I should make two payments of \$557 to the IRS, on September 15 and
 
 I have not done this yet, but what I plan to do is make a payment of \$557 directly using [the IRS website](https://www.irs.gov/payments/pay-personal-taxes-from-your-bank-account) by **September 15th**. This payment will cover estimated taxes on June 1st - August 31st income (three months of stipend). 
 
+## Paying Estimated Tax
+Go to [the IRS website](https://www.irs.gov/payments/pay-personal-taxes-from-your-bank-account) and click on "Make a payment" under "Pay personal taxes".
+
+1. The reason for payment is "Estimated Tax" which should be applied to your 1040ES. Select the appropriate tax period.
+
+2. Verify your identity based upon a previous year's tax return.
+
+3. Enter the payment amount and your bank info.
+
 ## Further Reading
 
 Here are some additional resources, so that you can get more information about tax requirements.
@@ -129,6 +138,7 @@ Some other forms that may be relevant to me, but might not be for you include:
 -   [Form 8863](https://www.irs.gov/pub/irs-pdf/f8863.pdf) and [Schedule 3 Form 1040](https://www.irs.gov/pub/irs-pdf/f1040s3.pdf), both relating to personal educational contributions
 
 -   [Schedule B Form 1040](https://www.irs.gov/pub/irs-pdf/f1040sb.pdf) for interest and dividends
+
 
 ```{=html}
 <!-- ## Additional Nonsense (maybe remove)
