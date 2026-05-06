@@ -21,6 +21,10 @@ During my Master's, I worked as a research assistant in the Center for Statistic
 
 My work on the above topics has been published in the articles below and presented at conferences in the subsequent abstracts section.
 
+- Lucero MJ, Setua S, Thangaraju K, Khan A, **Lamb DR**, Lisk C, Swindle D, Cendali FI, Dzieciatkowska M, Stephenson D, Pak DI, Tolson R, Zaeske S, Rana NK, Khan S, Westover N, Davizon-Castillo P, George G, Hassell K, Nuss R, D'Alessandro A, Manolova V, Irwin DC, Buehler PW. *Ferroportin inhibition attenuates pulmonary hypertension in hypoxic sickle cell disease mice*. Blood Adv. 2026 May 12;10(9):3229-3242. doi: 10.1182/bloodadvances.2025018680.
+
+- Govender K, **Lamb DR**, Walser C, Pal S, Setua S, O'Boyle Q, Pires IS, Lu S, Irwin DC, Buehler PW, Palmer AF, Cabrales P. *Hemoglobin binders reduce inflammation and tissue injury from hemolysis in venovenous extracorporeal circulation*. Blood Adv. 2026 Mar 24;10(6):2082-2094. doi: 10.1182/bloodadvances.2025017619. 
+
 - Dziewulska-Cronk KH, Reisz JA, Hay AM, Nemkov T, Cendali FI, Issaian A, **Lamb DR**, Palha MS, Legenzov EA, Kao JPY, Walker LA, Tekwani BL, Buehler PW, D'Alessandro A, Zimring JC. *Primaquine-5,6-orthoquinone is directly hemolytic to older G6PD deficient RBCs in a humanized mouse model*. J Pharmacol Exp Ther. 2024 Aug 2:JPET-AR-2024-002218. doi: 10.1124/jpet.124.002218. 
 
 - Cuddington C, Greenfield A, Lee YG, Kim JL, **Lamb D**, Buehler PW, Black SM, Palmer AF, Whitson BA. *Polymerized Human Hemoglobin-Based Oxygen Carrier Preserves Lung Allograft Function During Normothermic Ex Vivo Lung Perfusion*. ASAIO J. 2024 Jan 25. doi: 10.1097/MAT.0000000000002118. 
@@ -32,6 +36,7 @@ My work on the above topics has been published in the articles below and present
 -   Setua S, Thangaraju K, Dzieciatkowska M, Wilkerson RB, Nemkov T, **Lamb DR**, Tagaya Y, Boyer T, Rowden T, Doctor A, D'Alessandro A, Buehler PW. *Coagulation potential and the integrated omics of extracellular vesicles from COVID-19 positive patient plasma*. Sci Rep. 2022 Dec 23;12(1):22191. doi: 10.1038/s41598-022-26473-8.
 
 ### Abstracts & Posters
+-   **Lamb DR**, Schaubel DE. *Restricted Hospital-Free Survival as a Patient-Centered Survival Outcome*. Poster presented at ENAR 2026.
 -   Hay AH, Buehler P, Kao J, **Lamb DR**, Commons R, Legenzov EA, Palha MS, Zimring JC. *Combination of a reductase inhibitor with primaquine prevents hemolysis of G6PD deficient RBCs*. Abstract submitted to ASTMH annual meeting 2024.
 -   **Lamb DR**, Thanagarju K, Setua S, Buehler PW. *Adulteration of opioid deterrent formulated tablets and hematological toxicity*. Poster presented at: CERSI Summit 2023.
 -   Dziewulska KH, Kao JPY, Palha MS, Legenzov EA, Buehler PW, **Lamb DR**, Zimring JC. *Superoxide generation and redox cycling of primaquine metabolites can be driven by Biliverdin Reductase B and N-ribosyldihydronicotinamide: quinone reductase 2*. Abstract submitted to ASTMH annual meeting 2023.

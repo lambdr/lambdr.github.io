@@ -1,0 +1,354 @@
+---
+title: "Theresa, Tall? Trying to Tell"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    code_folding: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  fig.width = 8,
+  out.width = "80%",
+  fig.align = "center"
+)
+
+n = 100000
+```
+
+
+Perhaps I should have a blog. This is what I am thinking about instead of studying for my survival analysis exam. Gosh, I wish it was a survey analysis exam, because I'm refreshing my memory on some fun old tricks. But alas. Blogs and substacks are all the craze these days, no? And I don't see why I can't start one as well. Besides, I've already decided that this is going to go on my website. At least for a bit. Just to make a point. I suppose we'll see where it goes from there.
+
+So I have this friend named Theresa. Perhaps she's the only person who will ever read this, so the recap isn't necessary. Anyway, she claims:
+
+<blockquote>
+If I may be at liberty to be pedantic for a moment.  The [2015-2018 data](https://www.cdc.gov/nchs/data/series/sr_03/sr03-046-508.pdf) for heights of US adults (defined as 20 years or older) states the average is 63.5 and the median is 63.5 for women and the average is 69.0 and median is 69.1 for men, both with a standard deviation of 0.07. True, we cannot combine these datasets to compute the combined median. However, you will observe that the mean and median are remarkably similar, some may say statistically insignificantly dissimilar. Since [we know the percentage of men to women](https://www.statista.com/statistics/241495/us-population-by-sex/) in the US in 2018 was 49.247% men and 50.753% women, one would be at liberty to conclude that the median and mean of the combined dataset is likely to be 66.208 or more commonly known as 5'6" and a bit more. 
+
+We may observe this is roughly my height, although I must confess I have not accurately measured my height to this level of decimal precision. I do think I am at least 66.5 however. One can also observe that children are definitionally shorter than adults. Therefore, my conclusion that by being the average height of all US adults I am taller than half the adults is correct and logically sound due to the properties of the distribution of heights. At least for 2018. Thank you for your time.
+</blockquote>
+
+This is a great puzzle. "Theresa says that she is above the median of U.S. height, because she is taller than a weighted combination of the median heights for men and women. Is she correct? Explain." 
+
+To be a little formal, lets consider that we have population *Z* which is composed of some fraction $\delta$ of population *X* and some fraction ($1-\delta$) from population *Y*. Denoting the cumulative distribution function (CDF) of a height distribution as $F_H(h)$, we have 
+$$
+F_Z(h) = \delta F_X(h) + (1-\delta) F_Y(h)
+$$
+
+And the question is, whether the median for a given distribution $F_H^{-1}(0.5)$ admits:
+
+$$
+F_Z^{-1}(0.5) \overset{?}= \delta F_X^{-1}(0.5) + (1-\delta) F_Y^{-1}(0.5)
+$$
+
+The left-hand side of this questionable equality is the "True Median" or the group "Overall Median", while the right-hand sided is the "Pooled Median". Can the pooled median approximate the true median?
+
+There are a few factors that she lays out that bear some consideration. I think these are:
+
+1. The shape of the height distributions
+2. The symmetry of the height distributions
+3. The variance of the height distributions
+4. The mixing proportions of the distributions
+
+I will look at all of these below, but first... we have data. I mean I don't have data...
+
+## Height Quantiles in NHANES
+
+So I got [NHANES data](https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2015) from 2015-2016. Data are great. I'm glad the government is still making their data publically accessible. I'm going to load them into `R`, and see how height looks. (AN: I'm working on my coding best practices here, so I'm going to be explicit with my package funtion calls. Sorry that makes things a bit harder to read.)
+
+```{r load in nhanes data}
+df_nhanes <- haven::read_xpt(
+  "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2015/DataFiles/BMX_I.xpt"
+  ) |> 
+  dplyr::left_join(
+    haven::read_xpt(
+      "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2015/DataFiles/DEMO_I.xpt"
+      ) |>
+      dplyr::select(SEQN, RIAGENDR, RIDAGEYR, WTMEC2YR, SDMVPSU, SDMVSTRA),
+    by = dplyr::join_by(SEQN)) |> 
+  dplyr::select(id = SEQN, svy_weight = WTMEC2YR, age = RIDAGEYR, gender = RIAGENDR, 
+                height = BMXHT, psu = SDMVPSU, strata = SDMVSTRA) |> 
+  dplyr::mutate(gender = ifelse(gender == 1, "men", "women")) |>
+  dplyr::filter(age > 20)
+```
+
+### Height Spread in NHANES
+
+NHANES is great because so much care is taken into the survey design. It is not a simple random survey, but the adjustment weights are included in the data! This does mean that every calculation is going to be a bit painful, so I'm going to lean on the `survey` package. Note that height is measured in centimeters. Theresa claims her height is 5' 6 1/2", or 168.9 cm.
+
+```{r boxplot of height}
+df_nhanes |> 
+  survey::svydesign(ids = ~psu, strata = ~strata,  weight = ~svy_weight, data = _, nest = T) |> 
+  survey::svyboxplot(height~factor(gender), design = _, all.outliers = T, xlab = "Gender", ylab = "Height (cm)")
+```
+
+There are three things that I notice. First, men and women have different heights, but there's non-trivial overlap. The whiskers of each plot contain the box of the other gender. This is... well known, but it's always good to start with unsurprising results. Next, the height distributions seem fairly symmetric, with only slightly excessive left (lower) tails. Symmetry is good, I think it will help Theresa's argument. The next is that the variance seems slightly different between the groups, with men a bit more variable than women. We can verify that below:
+
+```{r height standard deviation}
+df_nhanes |> 
+  tidyr::drop_na(height, gender) |> 
+  survey::svydesign(ids = ~psu, strata = ~strata, weight = ~svy_weight, data = _, nest = T) |> 
+  survey::svyby(~height, by = ~gender, survey::svyvar, design = _) |> 
+  dplyr::select(height_var = height) |> 
+  dplyr::mutate(height_se = sqrt(height_var))
+```
+
+Height standard deviation of 7-7.6 cm seems very reasonable. But the didn't the data Theresa cite claim the standard deviation was 0.07 inches (0.19 cm) for both men and women? Wait.. that's really low. Those values in the CDC report above are the standard error of the mean estimates, not the population standard deviation.
+
+### NHANES 2015-2016 Height Quantiles
+
+Now to get the actual quantiles from these data.
+
+```{r get quantiles}
+quantiles = quantiles = 1:100/100
+
+total_quantiles <- df_nhanes |> 
+  tidyr::drop_na(height, gender) |> 
+  survey::svydesign(ids = ~psu, strata = ~strata, weight = ~svy_weight, data = _, nest = T) |> 
+  survey::svyquantile(~height, design = _, quantiles = quantiles, ci = F) |> 
+  magrittr::extract2("height")
+
+men_quantiles <- df_nhanes |> 
+  tidyr::drop_na(height, gender) |> 
+  dplyr::filter(gender == "men") |> 
+  survey::svydesign(ids = ~psu, strata = ~strata, weight = ~svy_weight, data = _, nest = T) |> 
+  survey::svyquantile(~height, design = _, quantiles = quantiles, ci = F) |> 
+  magrittr::extract2("height")
+
+women_quantiles <- df_nhanes |> 
+  tidyr::drop_na(height, gender) |> 
+  dplyr::filter(gender == "women") |> 
+  survey::svydesign(ids = ~psu, strata = ~strata, weight = ~svy_weight, data = _, nest = T) |> 
+  survey::svyquantile(~height, design = _, quantiles = quantiles, ci = F) |> 
+  magrittr::extract2("height")
+
+# combine into a dataframe
+df_quantiles <- tibble::tibble(
+  quant = quantiles,
+  men_quantiles = as.numeric(men_quantiles),
+  women_quantiles = as.numeric(women_quantiles),
+  total_quantiles = as.numeric(total_quantiles)
+)
+```
+
+With the data loaded in, let's plot the distribution of height for men and women, along with their survey-weighted medians, the overall median, and then the pooled median.
+
+```{r quantile plot from nhanes}
+df_median <- df_quantiles |> 
+  dplyr::filter(quant == 0.5) |> 
+  dplyr::select(Men = men_quantiles, Women = women_quantiles, Overall = total_quantiles) |> 
+  dplyr::mutate(Pooled = 0.492*Men + 0.508*Women) |> 
+  tidyr::pivot_longer(everything(), names_to = "group", values_to = "values")
+
+nhanes_dist <- df_quantiles |> 
+  dplyr::select(Men = men_quantiles, Women = women_quantiles) |> 
+  tidyr::pivot_longer(Men:Women, names_to = "gender", values_to = "values") |> 
+  ggplot2::ggplot(ggplot2::aes(x = values, fill = gender, color = gender)) +
+  ggplot2::geom_density(alpha = 0.3) +
+  ggplot2::geom_vline(data = df_median, ggplot2::aes(xintercept = values, linetype = group, color = group)) + 
+  ggplot2::scale_color_manual(
+      name = "Distribution",
+      values = c("Women" = "#D5005E", "Men" = "#28A2D2")
+    ) +
+    ggplot2::scale_fill_manual(
+      name = "Distribution",
+      values = c("Women" = "#D5005E", "Men" = "#28A2D2")
+    ) +
+    ggplot2::scale_linetype_manual(name = "Median", values = c("Men" = 2, "Women" = 2, "Overall" = 2, "Pooled" = 3)) +
+    ggplot2::theme_bw() + 
+    ggplot2::theme(legend.position = "bottom") +
+    ggplot2::labs(x = "Height (cm)", y = "Density")
+
+nhanes_dist
+```
+
+We can plot the quantile functions explicitly, and I will add a horizontal line at 168.9 cm. 
+
+```{r quantile function}
+df_quantiles |> 
+  dplyr::select(quant, Men = men_quantiles, Women = women_quantiles, Overall = total_quantiles) |> 
+  tidyr::pivot_longer(Men:Overall, names_to = "group", values_to = "values") |> 
+  ggplot2::ggplot(ggplot2::aes(x = quant, y = values, color = group)) +
+  ggplot2::geom_line() +
+  ggplot2::geom_hline(yintercept = 168.9, color = "#222", linetype = 3) +
+  ggplot2::scale_color_manual(
+    name = "Gender",
+    values = c("Men" = "#28A2D2", "Overall" = "#080808", "Women" = "#D5005E")
+  ) +
+  ggplot2::theme_bw() + 
+  ggplot2::theme(legend.position = "bottom") +
+  ggplot2::labs(x = "Quantile", y = "Height (cm)")
+```
+
+We can see that Theresa is indeed a bit above the median height for whole US adult population. Exact percentiles are are given in the table below. 
+
+```{r theresas quantiles}
+df_quantiles |> 
+  dplyr::select(quant, Men = men_quantiles, Women = women_quantiles, Overall = total_quantiles) |> 
+  tidyr::pivot_longer(Men:Overall, names_to = "group", values_to = "values") |> 
+  dplyr::group_by(group) |> 
+  dplyr::filter(values >168.9) |> 
+  dplyr::filter(dplyr::row_number() == 1) |> 
+  dplyr::select(group, quant) |> 
+  dplyr::mutate(quant = paste0(quant*100, "th")) |> 
+  knitr::kable(col.names = c("Group", "Theresa's Percentile"))
+```
+
+Ok, we've settled the main part of the question. But is this argument valid? Not really...
+
+## Exploring Pooled Medians
+
+So Theresa is "tall", confirmed. But let's think about the problem at hand. What are the features of a distribution that might allow the pooled median to approximate the true median? I mentioned above that I think coming from the same ditribution family, that family being symmetric, having the same spread/variance, and an equal mixture are important. Let's explore those factors below.
+
+I'm going to make some pictures. I wrote a function here to do that.
+
+```{r plot func}
+dist_plot <- function(df, x_dist, y_dist, pivot = TRUE) {
+  # pivot longer
+  if (pivot) df <- df |> tidyr::pivot_longer(x:y, names_to = "group", values_to = "values")
+  
+  
+  # values for x
+  n_x <-  df |>
+    dplyr::filter(group == "x") |> 
+    nrow()
+  
+  x_med <- df |> 
+    dplyr::filter(group == "x") |> 
+    dplyr::pull(values) |> 
+    median()
+  
+  # values for y
+  n_y <-  df |>
+    dplyr::filter(group == "y") |> 
+    nrow()
+  
+  y_med <- df |> 
+    dplyr::filter(group == "y") |> 
+    dplyr::pull(values) |> 
+    median()
+  
+  # true and pooled median
+  pool_med <- n_x / (n_x + n_y) * x_med + n_y/(n_x + n_y)*y_med
+  
+  true_med <- df |> 
+    dplyr::pull(values) |> 
+    median()
+  
+  # plot the distributions of X and Y
+  split_plot <- df |>
+    ggplot2::ggplot(ggplot2::aes(x = values, color = group, fill = group)) +
+    ggplot2::geom_density(alpha = 0.3) +
+    ggplot2::geom_vline(ggplot2::aes(xintercept = x_med), color = "#D5005E", linetype = 2) +
+    ggplot2::geom_vline(ggplot2::aes(xintercept = y_med), color = "#28A2D2", linetype = 2) +
+    ggplot2::scale_color_manual(
+      name = "Distribution",
+      values = c("x" = "#D5005E", "y" = "#28A2D2"),
+      labels = c("x" = x_dist, "y" = y_dist)
+    ) +
+    ggplot2::scale_fill_manual(
+      name = "Distribution",
+      values = c("x" = "#D5005E", "y" = "#28A2D2"),
+      labels = c("x" = x_dist, "y" = y_dist)
+    ) +
+    #ggplot2::scale_linetype_manual(name = "Median", values = c("X median" = 2, "Y median" = 2)) +
+    ggplot2::theme_bw() + 
+    ggplot2::theme(legend.position = "bottom") +
+    ggplot2::labs(x = NULL, y = "Density")
+    
+    # plot distribution of mixture
+  pool_plot <- df |> 
+    ggplot2::ggplot(ggplot2::aes(x = values)) + 
+    ggplot2::geom_density(fill = "#862AAF", color = "#862AAF", alpha = 0.3) +
+    ggplot2::geom_vline(ggplot2::aes(linetype = "X median", xintercept = x_med), color = "#D5005E") +
+    ggplot2::geom_vline(ggplot2::aes(xintercept = true_med, linetype = "True"), color = "#111") +
+    ggplot2::geom_vline(ggplot2::aes(xintercept = pool_med, linetype = "Pooled"), color = "#666") +
+    ggplot2::geom_vline(ggplot2::aes(xintercept = y_med, linetype = "Y median"), color = "#28A2D2") +
+    ggplot2::scale_linetype_manual(name = "Median", values = c("X median" = 2, "True" = 2, 
+                                                               "Pooled" = 3, "Y median" =   2)) +
+    ggplot2::theme_bw() + 
+    ggplot2::theme(legend.position = "bottom") +
+    ggplot2::labs(x = NULL, y = "Density")
+  
+  combined_plot <- patchwork::wrap_plots(split_plot, pool_plot)
+  return(combined_plot)
+}
+```
+
+
+### Ideal case
+
+First, let's look at a situation where all four factors are satisified. We can see below that when we draw $X \sim N(0,1)$ and $Y \sim N(3, 1)$, the true median (dashed black line) is the same as the pooled median (dotted grey line). 
+
+```{r ideal case}
+tibble::tibble(x = rnorm(n), y = rnorm(n, 3)) |> 
+  dist_plot(x_dist = "X ~ N(0,1)", y_dist = "Y ~ N(3,1)")
+```
+
+Now I'll look at what happens when we break each element.
+
+### Distribution Family
+
+Must the distributions be from the same family? As a counterexample, I'll now consider two symmetric distributions, with the same variance, equally mixed. I'll use a Normal and Laplace distribution both with variance 2. 
+
+```{r distribution}
+tibble::tibble(x = rnorm(n, 0, sqrt(2)), y = extraDistr::rlaplace(n, 3, 1)) |> 
+  dist_plot(x_dist = "X ~ N(0,2)", y_dist = "Y ~ Laplace(3,1)")
+```
+
+We can see the two medians begin to separate, but only slightly. Now each line is visible next to each other, rather than being overlayed, but they're still fairly similar at this point. I considered using a Cauchy distribution but that broke things (couldn't be plotted nicely).
+
+### Symmetry
+
+Now let's look at what happens when the distributions are the same but not symmetric. I've opted for two $\chi^2_{(1)}$ distributions, and shifted one of them by three.
+
+```{r symmetry}
+tibble::tibble(x = rchisq(n, 1), y = 3 + rchisq(n, 1)) |> 
+  dist_plot(x_dist = expression(X %~% chi[(1)]^2), y_dist = expression(Y %~% Noncentral ~ chi[(1)]^2))
+```
+
+There is a pronounced shift in the median from their pooled quantity. Because the distributions are so skewed, you need to cover most of *X* before you even get to any of *Y*. Quantiles here are all awry.
+
+### Variance
+
+Let's return to a slightly more standard setting. We'll consider two normal distributions, but with notably different variances, say 1 and 9. 
+
+```{r variance}
+tibble::tibble(x = rnorm(n), y = rnorm(n, 3, 3)) |> 
+  dist_plot(x_dist = "X ~ N(0,1)", y_dist = "Y ~ N(3,9)")
+```
+
+The wider spread in the second distribution will cause it to cover up the first one. As a result, when we integrate the mixture, we accrue probability much more quickly than the pooled estimate would suggest.
+
+### Mixture
+
+And now we consider the mixture proportion. The limiting case of this, where you have a 99:1 mix of two distributions, the quantiles will be dominated by the larger proportion. To see this more subtly, consider a 1:2 mixture of normals.
+
+```{r mixture}
+tibble::tibble(group = c(rep("x", 2*n/3), rep("y", 4*n/3)), values = c(rnorm(2*n/3), rnorm(4*n/3, 3))) |> 
+  dist_plot(x_dist = "X ~ N(0,1)", y_dist = "Y ~ N(3,1)", pivot = FALSE)
+```
+
+The greater influence of *Y* in this figure pulls the median further towards *Y* than the pooled calculation would suggest. We've seen above
+
+## Conclusion
+
+So we can see how each of these four violations can prevent the pooled median from being used as the true median of the mixture distribution. But, when all four of these conditions are satisfied, you do get a symmetric mixture distribution. And in a symmetric distribution, the mean and median are equivalent^1^, and so the fact that you can pool means (i.e. linear combinations work) sort of extends to the median by proxy. So the four conditions: same (symmetric) distribution family, same variance (spread), and an equal mixture yield a sufficient condition. But some of these violations still lead to a symmetric mixture:
+
+```{r symmetry viol}
+tibble::tibble(x = 1 - rchisq(n, 2), y = -1 + rchisq(n, 2)) |> 
+  dist_plot(x_dist = expression(X %~% Flipped ~ chi[(2)]^2), y_dist = expression(Y %~% Noncentral ~ chi[(2)]^2))
+```
+
+So, let's look back at the NHANES data.
+
+```{r reexamine nhanes height dist}
+nhanes_dist
+```
+
+Are these distributions symmetric? Not exactly, but it's close. Are they from the same family? Maybe. They're both reasonably-bell shaped. Do they have the same variance? Not quite, but 50 cm^2^ vs 58 cm^2^ isn't too wildly different. And is the mixture proportion the same? Just about, again 49.2% and 50.8% isn't too far off from 50:50. So looking at the plot above, we can see that the pooled median (grey dotted) and the true median (grey dashed) aren't terribly off from one another. But we also know that this is a special case. If the variance of the height among genders did differ more, if we had a subpopulation with 60% women and 40% men, or if height were not so gosh-darned well behaved (e.g. height of all in U.S., not just adults), then we could not pool the median in this way.
+
+So, to conclude. Don't pool your medians, and certainly not your other quantiles. But this is still fun to think about. Thanks Theresa.
+
+^1^ When the mean exists.
+
