@@ -336,7 +336,7 @@ The greater influence of *Y* in this figure pulls the median further towards *Y*
 So we can see how each of these four violations can prevent the pooled median from being used as the true median of the mixture distribution. But, when all four of these conditions are satisfied, you do get a symmetric mixture distribution. And in a symmetric distribution, the mean and median are equivalent^1^, and so the fact that you can pool means (i.e. linear combinations work) sort of extends to the median by proxy. So the four conditions: same (symmetric) distribution family, same variance (spread), and an equal mixture yield a sufficient condition. But some of these violations still lead to a symmetric mixture:
 
 ```{r symmetry viol}
-tibble::tibble(x = 1 - rchisq(n, 2), y = -1 + rchisq(n, 2)) |> 
+tibble::tibble(x = 8 - rchisq(n, 2), y = -8 + rchisq(n, 2)) |> 
   dist_plot(x_dist = expression(X %~% Flipped ~ chi[(2)]^2), y_dist = expression(Y %~% Noncentral ~ chi[(2)]^2))
 ```
 
